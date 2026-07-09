@@ -1,37 +1,143 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>目次 (index.html)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通科アドバンス１年 作品目次</title>
     <style>
-        body { font-family: sans-serif; margin: 30px; line-height: 1.6; }
-        h1 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { color: #0066cc; text-decoration: none; font-size: 18px; }
-        a:hover { text-decoration: underline; }
+        /* 全体のベースデザイン */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* グリッドレイアウト */
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /* カードの基本スタイル */
+        li {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        /* リンクエリアをカード全体に広げる */
+        a {
+            display: block;
+            padding: 24px;
+            color: #333;
+            text-decoration: none;
+            height: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* タイトルの文字デザイン */
+        .page-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-top: 35px; /* タグのスペースを確保 */
+            color: #2c3e50;
+        }
+
+        /* 拡張子（.html）を少し目立たなくする */
+        .extension {
+            font-size: 0.85rem;
+            color: #bdc3c7;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* ジャンル別タグの共通スタイル */
+        .tag {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ――― 各ページのイメージに合わせたカラー（タグ） ――― */
+        .sports   { background-color: #e3f2fd; color: #1e88e5; } /* サッカー・NBA・ホークス・スマブラ */
+        .music    { background-color: #f3e5f5; color: #8e24aa; } /* ミセス・西野カナ・プロセカ */
+        .nature   { background-color: #e8f5e9; color: #43a047; } /* ネコ・昆虫・山火事 */
+        .culture  { background-color: #fff3e0; color: #fb8c00; } /* ドラゴンボール・神様のカルテ */
+        .local    { background-color: #efebe9; color: #6d4c41; } /* 東松山 */
+        .beauty   { background-color: #fce4ec; color: #d81b60; } /* 混合肌・こぎみゅん */
+        .life     { background-color: #e0f7fa; color: #00acc1; } /* 眠気打破 */
+
     </style>
 </head>
 <body>
+
+<div class="container">
     <h1>普通科アドバンス１年</h1>
+    <p class="subtitle">生徒たちの学習・研究発表ポータルサイト</p>
+
     <ul>
-        <li><a href="2026年 FIFAワールドカップ まとめ.html">2026年 FIFAワールドカップ まとめ.html</a></li>
-        <li><a href="2026年サッカーW杯 ブラジル戦の分析.html">2026年サッカーW杯 ブラジル戦の分析.html</a></li>
-        <li><a href="Mrs. GREEN APPLE  REAL REASON ULTRA.html">Mrs. GREEN APPLE  REAL REASON ULTRA.html</a></li>
-        <li><a href="USA STYLE! NBA QUICK GUIDE.html">USA STYLE! NBA QUICK GUIDE.html</a></li>
-        <li><a href="【住所つき】東松山のおすすめ観光スポット.html">【住所つき】東松山のおすすめ観光スポット.html</a></li>
-        <li><a href="【公式設定】こぎみゅん 情報まとめ.html">【公式設定】こぎみゅん 情報まとめ.html</a></li>
-        <li><a href="【完全版】眠気打破リフレッシュマニュアル.html">【完全版】眠気打破リフレッシュマニュアル.html</a></li>
-        <li><a href="【徹底紹介】『神様のカルテ』が10代から大人までに愛される理由.html">【徹底紹介】『神様のカルテ』が10代から大人までに愛される理由.html</a></li>
-        <li><a href="イエネコ - 奇妙な生態の観察記録.html">イエネコ - 奇妙な生態の観察記録.html</a></li>
-        <li><a href="ドラゴンボール 語り合いの記録.html">ドラゴンボール 語り合いの記録.html</a></li>
-        <li><a href="プロジェクトセカイ カラフルステージ！ feat. 初音ミク まとめ.html">プロジェクトセカイ カラフルステージ！ feat. 初音ミク まとめ.html</a></li>
-        <li><a href="山火事の原因と意外な事例：ヘビが引き起こす火災.html">山火事の原因と意外な事例：ヘビが引き起こす火災.html</a></li>
-        <li><a href="昆虫標本の作り方とラベルの書き方完全ガイド.html">昆虫標本の作り方とラベルの書き方完全ガイド.html</a></li>
-        <li><a href="混合肌のためのベースメイク＆崩れ対策まとめ.html">混合肌のためのベースメイク＆崩れ対策まとめ.html</a></li>
-        <li><a href="知れば知るほど沼にハマる、スマブラの深さ.html">知れば知るほど沼にハマる、スマブラの深さ.html</a></li>
-        <li><a href="福岡ソフトバンクホークス-常勝軍団の解剖.html">福岡ソフトバンクホークス-常勝軍団の解剖.html</a></li>
-        <li><a href="西野カナ（カナやん） まとめ.html">西野カナ（カナやん） まとめ.html</a></li>
+        <li><a href="2026年 FIFAワールドカップ まとめ.html"><span class="tag sports">スポーツ</span><div class="page-title">2026年 FIFAワールドカップ まとめ<span class="extension">.html</span></div></a></li>
+        <li><a href="2026年サッカーW杯 ブラジル戦の分析.html"><span class="tag sports">スポーツ</span><div class="page-title">2026年サッカーW杯 ブラジル戦の分析<span class="extension">.html</span></div></a></li>
+        <li><a href="Mrs. GREEN APPLE  REAL REASON ULTRA.html"><span class="tag music">音楽</span><div class="page-title">Mrs. GREEN APPLE  REAL REASON ULTRA<span class="extension">.html</span></div></a></li>
+        <li><a href="USA STYLE! NBA QUICK GUIDE.html"><span class="tag sports">スポーツ</span><div class="page-title">USA STYLE! NBA QUICK GUIDE<span class="extension">.html</span></div></a></li>
+        <li><a href="【住所つき】東松山のおすすめ観光スポット.html"><span class="tag local">地域</span><div class="page-title">【住所つき】東松山のおすすめ観光スポット<span class="extension">.html</span></div></a></li>
+        <li><a href="【公式設定】こぎみゅん 情報まとめ.html"><span class="tag beauty">キャラクター</span><div class="page-title">【公式設定】こぎみゅん 情報まとめ<span class="extension">.html</span></div></a></li>
+        <li><a href="【完全版】眠気打破リフレッシュマニュアル.html"><span class="tag life">ライフハック</span><div class="page-title">【完全版】眠気打破リフレッシュマニュアル<span class="extension">.html</span></div></a></li>
+        <li><a href="【徹底紹介】『神様のカルテ』が10代から大人までに愛される理由.html"><span class="tag culture">図書・文学</span><div class="page-title">【徹底紹介】『神様のカルテ』が10代から大人までに愛される理由<span class="extension">.html</span></div></a></li>
+        <li><a href="イエネコ - 奇妙な生態の観察記録.html"><span class="tag nature">生き物</span><div class="page-title">イエネコ - 奇妙な生態の観察記録<span class="extension">.html</span></div></a></li>
+        <li><a href="ドラゴンボール 語り合いの記録.html"><span class="tag culture">アニメ・漫画</span><div class="page-title">ドラゴンボール 語り合いの記録<span class="extension">.html</span></div></a></li>
+        <li><a href="プロジェクトセカイ カラフルステージ！ feat. 初音ミク まとめ.html"><span class="tag music">ゲーム・音楽</span><div class="page-title">プロジェクトセカイ カラフルステージ！ feat. 初音ミク まとめ<span class="extension">.html</span></div></a></li>
+        <li><a href="山火事の原因と意外な事例：ヘビが引き起こす火災.html"><span class="tag nature">環境・科学</span><div class="page-title">山火事の原因と意外な事例：ヘビが引き起こす火災<span class="extension">.html</span></div></a></li>
+        <li><a href="昆虫標本の作り方とラベルの書き方完全ガイド.html"><span class="tag nature">自然・科学</span><div class="page-title">昆虫標本の作り方とラベルの書き方完全ガイド<span class="extension">.html</span></div></a></li>
+        <li><a href="混合肌のためのベースメイク＆崩れ対策まとめ.html"><span class="tag beauty">美容・メイク</span><div class="page-title">混合肌のためのベースメイク＆崩れ対策まとめ<span class="extension">.html</span></div></a></li>
+        <li><a href="知れば知るほど沼にハマる、スマブラの深さ.html"><span class="tag sports">ゲーム</span><div class="page-title">知れば知るほど沼にハマる、スマブラの深さ<span class="extension">.html</span></div></a></li>
+        <li><a href="福岡ソフトバンクホークス-常勝軍団の解剖.html"><span class="tag sports">スポーツ</span><div class="page-title">福岡ソフトバンクホークス-常勝軍団の解剖<span class="extension">.html</span></div></a></li>
+        <li><a href="西野カナ（カナやん） まとめ.html"><span class="tag music">音楽</span><div class="page-title">西野カナ（カナやん） まとめ<span class="extension">.html</span></div></a></li>
     </ul>
+</div>
+
 </body>
 </html>
