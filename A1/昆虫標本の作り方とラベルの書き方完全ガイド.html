@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>昆虫標本の作り方とラベルの書き方完全ガイド</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 15mm;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            /* 昆虫のシルエットやイラストを背景パターンとしてCSSで配置 */
+            background-color: #f4f7f5;
+            background-image: 
+                radial-gradient(rgba(142, 182, 155, 0.15) 1px, transparent 0),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%238eb69b' fill-opacity='0.08'%3E%3Cpath d='M20 15 c0-3 2-5 5-5 s5 2 5 5 c0 4-2 7-5 7 s-5-3-5-7 M18 20 q3 4 7 4 t7-4 M15 15 h20 M15 22 h20 M20 28 h10' stroke='%238eb69b' stroke-width='1' fill='none'/%3E%3Cpath d='M90 20 c-3 0-5 3-5 6 s2 6 5 6 s5-3 5-6 s-2-6-5-6 M75 26 h30 M70 20 q10 6 20 6 M70 32 q10-6 20-6' stroke='%238eb69b' stroke-width='1' fill='none'/%3E%3Cpath d='M35 80 c0-5 4-8 8-8 s8 3 8 8 c0 6-3 10-8 10 s-8-4-8-10 M30 80 h26 M30 86 h26' stroke='%238eb69b' stroke-width='1' fill='none'/%3E%3Ccircle cx='95' cy='85' r='5'/%3E%3Cpath d='M90 85 q5-8 10 0 t-10 0' stroke='%238eb69b' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 24px 24px, 120px 120px;
+            font-size: 10.5pt;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            padding: 30px;
+        }
+        .header {
+            background-color: #2e4a3f;
+            color: #ffffff;
+            margin: -30px -30px 25px -30px;
+            padding: 35px 30px;
+            border-bottom: 5px solid #8eb69b;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::after {
+            content: '🪲 🦋 🪰 🦗';
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            font-size: 24px;
+            opacity: 0.2;
+            letter-spacing: 10px;
+        }
+        .header h1 {
+            font-size: 20pt;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .header p {
+            font-size: 11pt;
+            margin: 0;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 14pt;
+            color: #2e4a3f;
+            border-left: 5px solid #8eb69b;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            page-break-after: avoid;
+        }
+        h3 {
+            font-size: 11.5pt;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .step-container {
+            margin-bottom: 20px;
+        }
+        .step-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .step-title {
+            font-weight: bold;
+            color: #2e4a3f;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+        .step-title span {
+            background-color: #8eb69b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            margin-right: 8px;
+            display: inline-block;
+        }
+        .step-title .icon {
+            margin-left: auto;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .accent-box {
+            background-color: #eef5f1;
+            border-left: 4px solid #8eb69b;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+            page-break-inside: avoid;
+        }
+        .accent-box-title {
+            font-weight: bold;
+            color: #2e4a3f;
+            margin-bottom: 6px;
+            font-size: 11pt;
+        }
+        .label-example-table {
+            display: table;
+            width: 100%;
+            margin: 15px 0;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+        .label-example-row {
+            display: table-row;
+        }
+        .label-example-cell {
+            display: table-cell;
+            width: 50%;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .label-card {
+            background: #ffffff;
+            border: 2px solid #333333;
+            font-family: 'Times New Roman', serif;
+            padding: 8px;
+            font-size: 9.5pt;
+            line-height: 1.3;
+            min-height: 65px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        }
+        .label-card.jp {
+            font-family: 'MS Mincho', serif;
+            font-size: 9pt;
+        }
+        .label-caption {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        .diagram-svg {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .important-text {
+            color: #c0392b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>昆虫標本の作り方とラベル作成の完全ガイド</h1>
+            <p>大切な昆虫を傷つけず美しく、通なデザイン背景とともに学ぶ手順書</p>
+        </div>
+
+        <p>昆虫標本（ひょうほん）作りは、正しい手順を守り、適切な道具を使用することで、初心者でもきれいに作ることができます。ここでは、カブトムシやクワガタなどの「甲虫（こうちゅう）」を例に、形を整える工程から最重要パーツである「ラベル」の作成・取り付けまでを詳しく解説します。</p>
+
+        <h2>1. 昆虫標本作りの基本 5ステップ</h2>
+        
+        <div class="step-container">
+            <div class="step-box">
+                <div class="step-title"><span>ステップ 1</span>虫の体を柔らかくする（軟化 - なんか）<span class="icon">💧</span></div>
+                <p>死んでから時間が経った昆虫は、関節が固まっていて無理に動かすと足や触角が折れてしまいます。まずは関節を柔らかくします。</p>
+                <ul>
+                    <li>タッパーなどの密閉容器に、水で濡らしたティッシュやキッチンペーパーを敷きます。</li>
+                    <li>その上に昆虫を置きます（直接水に浸からないよう、アルミホイルなどを敷くと安心です）。</li>
+                    <li>容器のフタを閉め、1日〜2日ほど置いておくと、中の湿気で関節が柔らかくなります。</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title"><span>ステップ 2</span>汚れを落とす（洗浄）<span class="icon">🪥</span></div>
+                <p>体に泥やゴミがついていると、カビや腐敗の原因になります。必ずきれいに落としましょう。</p>
+                <ul>
+                    <li>柔らかくなった昆虫を優しく持ち、ぬるま湯や水で洗います。</li>
+                    <li>汚れている部分は、使い古した柔らかい歯ブラシや筆を使って、傷つけないように優しくこすり落とします。</li>
+                    <li>洗い終わったら、ティッシュの上でしっかり水気を拭き取ります。</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title"><span>ステップ 3</span>体に針を刺す（展刺 - てんし）<span class="icon">📍</span></div>
+                <p>昆虫を標本箱に固定するための「昆虫針」を刺します。刺す位置には重要なルールがあります。</p>
+                <ul>
+                    <li><span class="important-text">刺す位置：</span>甲虫（カブトムシやクワガタ）の場合、<strong>右側の前翅（まえばね・固い羽）のやや上側</strong>に刺します。真ん中や左側に刺してはいけません。</li>
+                    <li>虫の体に対して、針が<strong>垂直（真っ直ぐ）</strong>になるように、上から下へゆっくり突き通します。</li>
+                    <li>針の頭（上の部分）が、虫の背中から1cmほど出るくらいの位置で止めます。</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title"><span>ステップ 4</span>形を整える（展足 - てんそく）<span class="icon">📐</span></div>
+                <p>ここが最も大切な、見た目を美しく自然に整える作業です。</p>
+                <ul>
+                    <li>展足板（または発泡スチロール）の上に、針を刺した昆虫を真っ直ぐ刺して固定します。</li>
+                    <li>ピンセットを使って、左右の足や触角を「生きているときのような自然な形」に広げます。</li>
+                    <li>広げた足が動かないように、<span class="important-text">足そのものには針を刺さず、足を挟み込むように</span>バツ印（X字）や並行に何本も針を刺して固定していきます。</li>
+                    <li>左右の足の角度や長さが対称（同じ）になるように整えると、非常に美しく仕上がります。</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title"><span>ステップ 5</span>しっかり乾かす（乾燥）<span class="icon">💨</span></div>
+                <p>形が整ったら、そのままの状態を維持して完全に乾燥させます。</p>
+                <ul>
+                    <li>直射日光が当たらない、<strong>風通しがよくて涼しい場所（またはエアコンの効いた部屋）</strong>に置きます。</li>
+                    <li>虫の大きさにもよりますが、小さな虫なら2週間、大きなカブトムシなら<strong>1ヶ月〜2ヶ月</strong>ほどじっくり乾かします。</li>
+                    <li>完全に乾いたら、周囲の固定していた針を優しく抜いていきます（体に刺した中心の針だけは残します）。</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>2. 標本ラベル（データラベル）の作り方</h2>
+        <p>標本の価値を決める最も重要な要素が「ラベル」です。これがないと、どんなに美しい標本でも学術的な価値が失われ、ただの「虫の死骸」になってしまいます。</p>
+
+        <h3>ラベルに書くべき「4つの必須情報」</h3>
+        <ol>
+            <li><strong>採集地（どこで）：</strong> 国名、都道府県名、市区町村名、さらに詳細な地名（〇〇山、〇〇公園など）。</li>
+            <li><strong>採集年月日（いつ）：</strong> 採集した日付。月を数字だけで書くと国によって解釈が異なるため、英語の略称（`Jul.` や `Aug.`）で書くか、日本語で「2026年7月9日」とはっきり書きます。</li>
+            <li><strong>採集者（だれが）：</strong> 採集した人の名前。名前の後ろに `leg.`（「〜により採集された」の意味）や「〇〇 〇〇 採集」と書き添えます。</li>
+            <li><strong>環境や採集方法（どのように）：</strong> 「外灯に飛来」「クヌギの樹液」など（※分かれば記入）。</li>
+        </ol>
+
+        <div class="accent-box">
+            <div class="accent-box-title">用紙のサイズと素材</div>
+            <p>サイズは縦 <strong>1.0cm〜1.5cm</strong> × 横 <strong>2.0cm〜2.5cm</strong> 程度の小さな長方形が一般的です。針で刺して何十年も保管するため、普通のコピー用紙ではなく、少し厚手の上質紙やケント紙を使用します。</p>
+        </div>
+
+        <h3>ラベルの記述例</h3>
+        <div class="label-example-table">
+            <div class="label-example-row">
+                <div class="label-example-cell">
+                    <div class="label-card">
+                        JAPAN: Saitama-ken<br>
+                        Moroyama-machi<br>
+                        9. Jul. 2026<br>
+                        Coll. Tarou Yamada
+                    </div>
+                    <div class="label-caption">【世界標準：ローマ字表記例】</div>
+                </div>
+                <div class="label-example-cell">
+                    <div class="label-card jp">
+                        埼玉県毛呂山町 〇〇<br>
+                        2026年7月9日<br>
+                        山田 太郎 採集<br>
+                        （クヌギ樹液）
+                    </div>
+                    <div class="label-caption">【国内・個人用：日本語表記例】</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>3. ラベルの取り付け方（視覚図解）</h2>
+        <p>印刷または手書きしたラベルを小さく綺麗に切り抜き、昆虫が刺さっている針の真下から、文字に被らないよう中心に真っ直ぐ刺して通します。体から少し離して、下から見上げなくても文字が読める位置にセットするのがポイントです。</p>
+
+        <div class="diagram-container">
+            <svg class="diagram-svg" width="500" height="280" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="60" width="120" height="70" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+                <text x="30" y="80" font-family="sans-serif" font-size="9" fill="#333">埼玉県毛呂山町</text>
+                <text x="30" y="95" font-family="sans-serif" font-size="9" fill="#333">2026年7月9日</text>
+                <text x="30" y="110" font-family="sans-serif" font-size="9" fill="#333">山田 太郎 採集</text>
+                <text x="80" y="150" font-family="sans-serif" font-size="11" fill="#2e4a3f" font-weight="bold" text-anchor="middle">1. ラベルの準備</text>
+                
+                <path d="M 150 95 L 180 95" stroke="#8eb69b" stroke-width="3" fill="none"/>
+                <polygon points="180,91 188,95 180,99" fill="#8eb69b"/>
+
+                <line x1="320" y1="20" x2="320" y2="240" stroke="#7f8c8d" stroke-width="2"/>
+                <circle cx="320" cy="20" r="4" fill="#f1c40f"/>
+                
+                <rect x="270" y="60" width="100" height="70" rx="20" fill="#4a2e2b" opacity="0.9"/>
+                <line x1="320" y1="60" x2="320" y2="130" stroke="#2c1a18" stroke-width="2"/>
+                <circle cx="330" cy="75" r="3" fill="#e74c3c"/>
+                <text x="380" y="75" font-family="sans-serif" font-size="10" fill="#e74c3c">←針は右羽に刺す</text>
+                <text x="380" y="100" font-family="sans-serif" font-size="11" fill="#4a2e2b" font-weight="bold">昆虫本体</text>
+
+                <rect x="260" y="170" width="120" height="50" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+                <text x="270" y="185" font-family="sans-serif" font-size="8" fill="#666">埼玉県毛呂山町...</text>
+                <text x="270" y="205" font-family="sans-serif" font-size="8" fill="#666">2026年7月9日...</text>
+                
+                <line x1="250" y1="130" x2="250" y2="170" stroke="#8eb69b" stroke-width="1.5" stroke-dasharray="4"/>
+                <text x="240" y="155" font-family="sans-serif" font-size="10" fill="#2e4a3f" text-anchor="end">隙間: 約8mm〜1cm</text>
+                
+                <text x="320" y="260" font-family="sans-serif" font-size="11" fill="#2e4a3f" font-weight="bold" text-anchor="middle">2. 同一の針に通して固定</text>
+            </svg>
+            <div class="label-caption">図：標本ラベルの配置と適切な位置関係</div>
+        </div>
+
+        <div class="accent-box" style="margin-top: 25px;">
+            <div class="accent-box-title">💡 長期保存のコツ</div>
+            <p>完成した標本は、気密性の高い「ドイツ箱（標本箱）」や、密閉できるプラスチックケースに保管します。箱の中には必ず<strong>防虫剤（パラゾール等）</strong>と<strong>乾燥剤（シリカゲル）</strong>を一緒に入れ、定期的に交換することで、何十年、何百年も美しい状態を保つことができます。</p>
+        </div>
+    </div>
+
+</body>
+</html>

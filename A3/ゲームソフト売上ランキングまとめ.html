@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームソフト売上ランキングまとめ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 20px;
+        }
+        header h1 {
+            color: #1a365d;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #4a5568;
+            font-size: 16px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #2b6cb0;
+            font-size: 22px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid #2b6cb0;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        tr:hover {
+            background-color: #edf2f7;
+        }
+        .rank {
+            font-weight: bold;
+            color: #2b6cb0;
+            text-align: center;
+            width: 60px;
+        }
+        .count {
+            font-weight: bold;
+            color: #2d3748;
+            white-space: nowrap;
+        }
+        .analysis-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 15px;
+        }
+        .analysis-box h3 {
+            color: #2b6cb0;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .analysis-box ul {
+            padding-left: 20px;
+            color: #4a5568;
+            font-size: 14px;
+        }
+        .analysis-box li {
+            margin-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #718096;
+            font-size: 12px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎮 ゲームソフト売上ランキング情報まとめ</h1>
+        <p>世界・国内・特定ジャンル（RPG）の歴代累計売上データを青を基調としたデザインでまとめています。</p>
+    </header>
+
+    <!-- 世界総合ランキング -->
+    <section>
+        <h2>👑 世界のゲームソフト累計売上ランキング TOP5</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rank">順位</th>
+                        <th>タイトル</th>
+                        <th>累計売上本数</th>
+                        <th>主なジャンル</th>
+                        <th>特徴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank">1位</td>
+                        <strong><td>テトリス</td></strong>
+                        <td class="count">約5億2,000万本</td>
+                        <td>パズル</td>
+                        <td>モバイル版や各ハードの合算で、人類史上最も遊ばれた不朽の名作パズル。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">2位</td>
+                        <strong><td>Minecraft（マインクラフト）</td></strong>
+                        <td class="count">約4億本</td>
+                        <td>シミュレーション</td>
+                        <td>ブロックを自由に配置する自由度の高さで、今なお世界中で売れ続けている怪物ゲーム。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">3位</td>
+                        <strong><td>グランド・セフト・オートV</td></strong>
+                        <td class="count">約2億3,000万本</td>
+                        <td>アクション</td>
+                        <td>圧倒的な自由度を誇るオープンワールドの金字塔。大人向けながら驚異的な売上。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4位</td>
+                        <strong><td>Wii Sports</td></strong>
+                        <td class="count">約8,290万本</td>
+                        <td>スポーツ / アクション</td>
+                        <td>Wiiリモコンを振る体感操作が世界中で大ヒットし、家族みんなで遊べる定番に。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5位</td>
+                        <strong><td>マリオカート8 / デラックス</td></strong>
+                        <td class="count">約7,954万本</td>
+                        <td>レース / アクション</td>
+                        <td>Wii U版とNintendo Switch版の合算。Switchを買ったらまず買う定番として今も大人気。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="analysis-box">
+            <h3>💡 世界市場の傾向分析</h3>
+            <ul>
+                <li><strong>「自由度」と「手軽さ」が世界を制す:</strong> 上位の『テトリス』や『マインクラフト』に共通するのは、「明確な終わりがなく、誰でも直感的に遊べる」という点です。</li>
+                <li><strong>任天堂の圧倒的な強さ:</strong> 『Wii Sports』や『マリオカート8』のように、みんなで集まってワイワイ遊ぶアクション・スポーツ系が長く売れ続ける傾向があります。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 世界RPGランキング -->
+    <section>
+        <h2>⚔️ 世界のRPG累計売上ランキング TOP5</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rank">順位</th>
+                        <th>タイトル</th>
+                        <th>累計売上本数</th>
+                        <th>派生ジャンル / 特徴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank">1位</td>
+                        <strong><td>ポケットモンスター 赤・緑（青・ピカチュウ含む）</td></strong>
+                        <td class="count">約4,600万本</td>
+                        <td>育成・収集RPG / 記念すべき初代ポケモン。ゲームボーイの通信機能を活かして社会現象に。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">2位</td>
+                        <strong><td>ウィッチャー3 ワイルドハント</td></strong>
+                        <td class="count">約5,000万本以上</td>
+                        <td>オープンワールドRPG / 重厚なストーリーと、広大で美しい世界を旅する大人向けの傑作。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">3位</td>
+                        <strong><td>エルデンリング</td></strong>
+                        <td class="count">約2,500万本以上</td>
+                        <td>アクションRPG / 高い難易度と圧倒的な達成感、広大なオープンワールドが世界中で大熱狂。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4位</td>
+                        <strong><td>ポケットモンスター 金・銀</td></strong>
+                        <td class="count">約2,300万本</td>
+                        <td>育成・収集RPG / 初代の正統続編。前作の舞台にも行けるボリュームが当時話題に。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5位</td>
+                        <strong><td>サイバーパンク2077</td></strong>
+                        <td class="count">約2,500万本</td>
+                        <td>オープンワールドRPG / 近未来のサイバーパンク都市を舞台にした、自由度の高いSFアクションRPG。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="analysis-box">
+            <h3>💡 RPGランキングの傾向分析</h3>
+            <ul>
+                <li><strong>「ポケモン」の圧倒的なブランド力:</strong> 初代だけでなく、歴代の主要タイトルが軒並み2,000万本以上を記録しており、RPGとしては世界トップクラスのモンスタータイトルです。</li>
+                <li><strong>近年のトレンドは「オープンワールド」:</strong> 『ウィッチャー3』や『エルデンリング』のように、プレイヤー自身が広大な世界を自由に探索できる作品が世界的な大ヒットに繋がっています。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 日本国内ランキング -->
+    <section>
+        <h2>🇯🇵 日本国内のゲームソフト累計売上ランキング TOP5</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rank">順位</th>
+                        <th>タイトル</th>
+                        <th>国内累計売上本数</th>
+                        <th>主なジャンル</th>
+                        <th>特徴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank">1位</td>
+                        <strong><td>あつまれ どうぶつの森</td></strong>
+                        <td class="count">約1,100万本以上</td>
+                        <td>シミュレーション</td>
+                        <td>コロナ禍の巣ごもり需要も重なり、日本国内で最も売れたパッケージソフトとして歴史を塗り替えました。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">2位</td>
+                        <strong><td>マリオカート8 デラックス</td></strong>
+                        <td class="count">約900万本以上</td>
+                        <td>レース / アクション</td>
+                        <td>Wii U版との合算等を含め、Switchを代表する定番中の定番として今も売れ続けています。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">3位</td>
+                        <strong><td>ポケットモンスター スカーレット・バイオレット</td></strong>
+                        <td class="count">約860万本以上</td>
+                        <td>育成・収集RPG</td>
+                        <td>オープンワールドになったポケモン。国内の「RPGジャンル」としては歴代1位の驚異的な数字。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4位</td>
+                        <strong><td>ポケットモンスター 赤・緑（青・ピカチュウ含む）</td></strong>
+                        <td class="count">約822万本</td>
+                        <td>育成・収集RPG</td>
+                        <td>1996年発売、すべてのポケモンの原点。当時の小学生を中心に社会現象になりました。</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5位</td>
+                        <strong><td>大乱闘スマッシュブラザーズ SPECIAL</td></strong>
+                        <td class="count">約800万本以上</td>
+                        <td>対戦アクション</td>
+                        <td>ゲームの垣根を超えたオールスターお祭りゲー。国内の対戦格闘・アクション系でトップ。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="analysis-box">
+            <h3>💡 日本市場の面白い特徴</h3>
+            <ul>
+                <li><strong>RPGでは「ポケモン」の1強状態:</strong> 国内のRPG歴代トップはポケモンが独占状態。ドラクエやFFの大ヒット作（300万〜400万本クラス）を大きく上回る数字を叩き出しています。</li>
+                <li><strong>携帯できるゲーム（ハード）が圧倒的に強い:</strong> 据え置き機やPCでじっくり遊ぶ大人向けの作品よりも、ゲームボーイ、DS、Switchといった「持ち歩けて、みんなで顔を合わせて遊べるゲーム」が歴史的に圧倒的な売上を記録する傾向にあります。</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>※売上データは公式発表および各種調査データに基づく累計推定値です。</p>
+    </footer>
+</div>
+
+</body>
+</html>

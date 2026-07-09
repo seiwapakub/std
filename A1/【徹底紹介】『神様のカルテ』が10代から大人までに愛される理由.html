@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【徹底紹介】『神様のカルテ』が10代から大人までに愛される理由</title>
+    <style>
+        :root {
+            --primary-color: #0d9488;
+            --primary-light: #ccfbf1;
+            --secondary-color: #e11d48;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        /* ヒーローヘッダー */
+        .hero-header {
+            background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+        }
+
+        .hero-header h1 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .book-info {
+            font-size: 15px;
+            color: #ccfbf1;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            padding: 40px;
+        }
+
+        .lead-paragraph {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f766e;
+            background-color: var(--primary-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 6px solid var(--primary-color);
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #0f766e;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 45px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        p {
+            margin: 0 0 20px 0;
+            text-align: justify;
+            font-size: 15.5px;
+            color: #334155;
+        }
+
+        /* あらすじボックス */
+        .story-container {
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 特徴・ポイントカード */
+        .point-card {
+            background-color: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .point-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+        }
+
+        .point-number {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .point-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 10px;
+            margin-bottom: 12px;
+        }
+
+        /* 魂の葛藤を現すクォート */
+        .climax-quote {
+            background: linear-gradient(to right, #fffbeb, #fef3c7);
+            border-left: 5px solid #fbbf24;
+            padding: 24px;
+            margin: 40px 0;
+            border-radius: 0 12px 12px 0;
+            text-align: center;
+        }
+
+        .climax-quote p {
+            margin: 0;
+            font-weight: 700;
+            font-size: 16.5px;
+            color: #92400e;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* ターゲットおすすめ */
+        .audience-section {
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .audience-section h3 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            color: var(--text-main);
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .audience-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .audience-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .audience-box p {
+            margin: 0;
+            font-size: 13.5px;
+            color: var(--text-sub);
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 30px 40px;
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="hero-header">
+            <span class="badge-tag">不朽の名作を再発見</span>
+            <h1>3日寝なくても、絶対に手を抜かない。<br>変人ドクターが教えてくれる「本当に大切なこと」</h1>
+            <p class="book-info">『神様のカルテ』 著者：夏川草介（小学館文庫）</p>
+        </div>
+
+        <div class="main-content">
+            
+            <div class="lead-paragraph">
+                ただの重い医療ドラマだと思っていませんか？<br>
+                本作は、思わずクスッと笑ってしまう強烈なユーモアと、涙が止まらない感動の人間ドラマが奇跡のバランスで同居する、唯一無二の傑作です。
+            </div>
+
+            <h2>あらすじ：24時間365日の最前線と、変人ドクター</h2>
+            <div class="story-container">
+                <p>舞台は「24時間365日対応」を掲げる信州の地方病院。常に極限状態の慢性的な人手不足から、内科医でありながら専門外の診療もこなし、当直からそのまま通常勤務に突入する「3日寝ない生活」すら日常茶飯事……という過酷な現場です。</p>
+                
+                <p>そんな戦場のような病院で働く主人公・<strong>栗原一止（いちと）</strong>の評判は、ずばり「変人」。夏目漱石の『草枕』をこよなく愛するあまり、現代の若者なのに「〜である」「〜なのだよ」と明治の文豪のような古風な口調を崩しません。最初は誰もがそのキャラクターに違和感を覚えますが、ページをめくるうちに彼の内に秘められた圧倒的な熱さに引き込まれていきます。</p>
+
+                <p>どれほど多忙で、どれほど口悪く毒づこうとも、彼は患者の前で絶対に手を抜きません。それは彼自身の愚直な性分であり、患者へ向き合う彼なりの覚悟の表れでした。</p>
+                
+                <p>そんなある日、一止のもとに最新医療が学べる大学病院の医局から熱心な誘いが届きます。自分の理想の医師像と、最先端医療への興味の間で激しく心が揺れ動く中、彼は手遅れの末期ガン患者である安曇（あずみ）おばあちゃんと出会います。彼女との切なくも温かい時間を通じ、一止の歩むべき道は静かに、しかし確固たるものとして定まっていきます。</p>
+            </div>
+
+            <h2>読む人の胸を打つ、3つの深掘りポイント</h2>
+
+            <div class="point-card">
+                <span class="point-number">Point 01</span>
+                <div class="point-title">何を人生の重要とするか（理念の選択）</div>
+                <p>人生は選択の連続です。大人数・最先端・エビデンス（科学的根拠）が揃った大学病院は、医師としても患者にとってもマスト（最善）の環境に見えました。しかしそれは、一止が目指す「患者と一対一で泥臭く向き合う」という理念とは少し違っていました。自分自身に計り知れない負担を課してでも、自らの信念を追い求める一止の姿は、生き方に悩む私たちの胸に強く突き刺さります。</p>
+            </div>
+
+            <div class="point-card">
+                <span class="point-number">Point 02</span>
+                <div class="point-title">夏目漱石の影響力（あだ名呼びの妙）</div>
+                <p>明治の文豪が遺した影響力は、現代でも色褪せません。作中では一止と妻以外のほぼ全員が「大狸先生」「古狐先生」といった強烈な『あだ名』で呼ばれます。これは漱石の名作『坊っちゃん』と全く同じ手法。これによって、細かな外見描写を省略しつつも、各キャラクターの体格や性質がすんなりと読者の頭の中に飛び込んでくる、素晴らしい物語のスパイスとなっています。</p>
+            </div>
+
+            <div class="point-card">
+                <span class="point-number">Point 03</span>
+                <div class="point-title">フィクションを超えた「地方医療のリアル」</div>
+                <p>世間が抱く「お医者さん＝高給取りのスマートな職業」というイメージを、本作は根底から覆します。仮眠なしの通常勤務、専門外の対応、そして古びた共同アパート暮らし……。現役の医師である著者が、実際に自分が勤務していた病院を舞台に執筆しているからこそ、これは単なるフィクションではなく、現代日本が抱えるリアルな問題提起としても深く考えさせられます。</p>
+            </div>
+
+            <div class="climax-quote">
+                <p>
+                    「手遅れの患者を拒否する大学病院」か、<br>
+                    「手遅れであったとしても、最後まで人間として向き合う地方病院」か――。<br>
+                    過酷な現実の中で一止が選んだ、涙が溢れるほど愛おしい答えを、ぜひ見届けてください。
+                </p>
+            </div>
+
+            <div class="audience-section">
+                <h3>🎯 この本は、あなたのための物語です</h3>
+                <div class="audience-grid">
+                    <div class="audience-box">
+                        <div class="audience-title">10代の学生のみなさんへ</div>
+                        <p>これから進路や将来、社会に出ることに悩むキミへ。「カッコよく生きるってどういうことだろう？」という答えが、ボロボロになりながら戦う一止の姿の中に必ず見つかります。</p>
+                    </div>
+                    <div class="audience-box">
+                        <div class="audience-title">大人のみなさんへ</div>
+                        <p>日々の仕事や現実に追われ、かつて自分が持っていたはずの「熱い気持ち」を忘れかけていませんか？ 一止たちの奮闘は、あなたの心に最高のエネルギーを補給してくれます。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+            『神様のカルテ』作品紹介 — 笑って、泣いて、自分の人生が少し愛おしくなる名作。
+        </div>
+    </div>
+
+</body>
+</html>

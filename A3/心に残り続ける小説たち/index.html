@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心に残り続ける 切なさとメリーバッドエンドの小説たち</title>
+    <style>
+        /* 全体のデザイン設定 */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #1a1e24; /* 深みのあるダークグレー */
+            color: #e0e6ed; /* 読みやすい薄いグレー */
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダー（タイトル部分） */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #0f171e);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 2px solid #34495e;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 15px 0 0 0;
+            font-size: 14px;
+            color: #95a5a6;
+        }
+
+        /* メインコンテンツの外枠 */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 本の紹介カード（2カラムレイアウト） */
+        .book-card {
+            background-color: #242b35;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #7f8c8d; /* 本ごとにアクセントの左線 */
+            display: flex; /* 画像とテキストを横並びにする */
+            gap: 20px; /* 画像とテキストの間の余白 */
+        }
+
+        /* おすすめ度が高い（三日間の幸福）カードのデザイン */
+        .book-card.pickup {
+            border-left-color: #9b59b6; /* 紫色のアクセント */
+        }
+
+        /* 本の画像エリア */
+        .book-image {
+            flex: 0 0 120px; /* 画像の幅を120pxに固定 */
+            text-align: center;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* 本のテキスト詳細エリア */
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #34495e;
+            color: #ecf0f1;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 15px;
+        }
+
+        .tag.alert {
+            background-color: #7d3c98;
+        }
+
+        .book-description {
+            font-size: 15px;
+            color: #cbd5e1;
+        }
+
+        /* スマホなどの画面が狭いときは縦並びにする設定 */
+        @media (max-width: 600px) {
+            .book-card {
+                flex-direction: column;
+                align-items: center;
+            }
+            .book-image {
+                flex: 0 0 auto;
+                width: 130px;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #7f8c8d;
+            border-top: 1px solid #242b35;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>心に残り続ける小説たち</h1>
+        <p>現実の痛みが突き刺さる、切なさとメリーバッドエンドの世界</p>
+    </header>
+
+    <div class="container">
+
+        <div class="book-card pickup">
+            <div class="book-image">
+                <img src="3days.jpg" alt="三日間の幸福 表紙">
+            </div>
+            <div class="book-info">
+                <span class="tag alert">イチオシ</span>
+                <span class="tag">メリーバッドエンド</span>
+                <div class="book-title">三日間の幸福</div>
+                <div class="book-author">著者：三秋 縋</div>
+                <div class="book-description">
+                    自分の寿命を1年につき1万円で売り払った青年と、その監視員として現れた少女の物語。残されたわずか3ヶ月の寿命の中で、二人が見つけたものとは。客観的には悲劇でも、当事者にとってはこれ以上ない救いとなる、美しすぎるメリーバッドエンドの傑作です。
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-image">
+                <img src="itai.jpg" alt="いたいのいたいの、とんでゆけ 表紙">
+            </div>
+            <div class="book-info">
+                <span class="tag">ダーク・切ない</span>
+                <span class="tag">純愛</span>
+                <div class="book-title">いたいのいたいの、とんでゆけ</div>
+                <div class="book-author">著者：三秋 縋</div>
+                <div class="book-description">
+                    『三日間の幸福』の著者が贈る、もう一つの切ない物語。過去に人を殺してしまった青年と、他人の傷を自分の体に引き受ける不思議な少女が出会います。お互いの孤独を埋め合うように寄り添う二人が、最後に選んだ選択に胸が締め付けられます。
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-image">
+                <img src="build.jpg" alt="スクラップ・アンド・ビルド 表紙">
+            </div>
+            <div class="book-info">
+                <span class="tag">現代ドラマ</span>
+                <span class="tag">ダーク・メリバ</span>
+                <div class="book-title">スクラップ・アンド・ビルド</div>
+                <div class="book-author">著者：羽田 圭介</div>
+                <div class="book-description">
+                    無職の青年・健斗と、口癖のように「早く死にたい」と言う高齢の祖父の奇妙な関係を描いた芥川賞受賞作。祖父の願いを叶えるため、あえて過剰に介護して身体を弱らせようとする健斗の歪んだ優しさと、その先にあるどこか切ない結末が、独特のメリーバッドエンド感を引き立てます。
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-image">
+                <img src="sotsugyou.jpg" alt="少女は卒業しない 表紙">
+            </div>
+            <div class="book-info">
+                <span class="tag">切ないビターエンド</span>
+                <span class="tag">青春・恋愛</span>
+                <div class="book-title">少女は卒業しない</div>
+                <div class="book-author">著者：朝井 リョウ</div>
+                <div class="book-description">
+                    明日、校舎が取り壊される高校の、最後の卒業式。7人の少女たちの別れと旅立ちを描いた連作短編集です。ずっと好きだった人への届かない想いや、離れ離れになる恋人とのすれ違いなど、青春のきらめきと同時に訪れる「現実的な切なさ」が胸に刺さる名作です。
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 切ない小説の図書室. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

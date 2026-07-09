@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実践・音楽理論の基礎 〜音名からアヴォイドノートまで〜</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 13pt;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 16pt;
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 12px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 13pt;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0 0 15px 0;
+            font-size: 11pt;
+        }
+        ul, ol {
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        .highlight-box {
+            background-color: #eef7fc;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+        }
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        .alert-box {
+            background-color: #fdf2f2;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+        }
+        .alert-box p:last-child {
+            margin-bottom: 0;
+        }
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: #e74c3c;
+            background: #fdf2f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .formula-display {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 12pt;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10.5pt;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 9pt;
+            font-weight: 600;
+            color: white;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .badge-primary { background-color: #3498db; }
+        .badge-secondary { background-color: #95a5a6; }
+        .badge-danger { background-color: #e74c3c; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 10pt;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>実践・音楽理論の基礎</h1>
+        <p>音名・音程の仕組みから、メロディとコード（アヴォイドノート）の関係性まで</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECTION 1 -->
+        <section>
+            <h2>1. 音名（音の名前）</h2>
+            <p>音楽で使われる基本の7音と、その間にある半音の構成です。ポピュラー音楽では英語表記（C, D, E...）が基本となるため、「ド＝C」の関係をまず覚えましょう。</p>
+            <ul>
+                <li><strong>日本語（階名）：</strong> ド ・ レ ・ ミ ・ ファ ・ ソ ・ ラ ・ シ</li>
+                <li><strong>英語（音名）：</strong> C ・ D ・ E ・ F ・ G ・ A ・ B</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section>
+            <h2>2. 音程（インターバル）</h2>
+            <p>音程とは、<strong>2つの音の間の距離（高さの離れ具合）</strong>のことです。単位には「度（ど）」を使います。音の距離によって、耳が感じる響きのニュアンス（明るい・暗いなど）が決まります。</p>
+            <ul>
+                <li><strong>1度：</strong> まったく同じ高さの音（例：ド と ド）</li>
+                <li><strong>2度：</strong> 隣り合う音（例：ド と レ）</li>
+                <li><strong>3度：</strong> 1つ飛ばしの音（例：ド と ミ）</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section>
+            <h2>3. 音階（スケール）</h2>
+            <p>音階とは、音を一定の規則に従って階段のように並べたものです。最も基本となるのが<strong>メジャースケール（長音階）</strong>です。</p>
+            
+            <h3>メジャースケールのルール（明るい響き）</h3>
+            <p>ピアノの「ド・レ・ミ・ファ・ソ・ラ・シ・ド」の並び方であり、音と音の間隔が必ず以下のルールになっています。</p>
+            
+            <div class="formula-display">
+                <span class="math">全音 − 全音 − 半音 − 全音 − 全音 − 全音 − 半音</span>
+            </div>
+
+            <ul>
+                <li><strong>半音：</strong> 鍵盤ですぐ隣り合う音（黒鍵も含めて一番近い隣）。「ミとファ」「シとド」の間は半音です。</li>
+                <li><strong>全音：</strong> 半音2つ分の距離。「ドとレ」の間には黒鍵があるので全音です。</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>💡 ポイント：</strong> この「全・全・半・全・全・全・半」のルールを守れば、どの音から始めても同じように明るい「ドレミファソラシド」が作れます。</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section>
+            <h2>4. 和音（コード）</h2>
+            <p>3つ以上の異なる音を同時に鳴らしたものを「和音（コード）」と呼びます。基本は音階の音を<strong>1つ飛ばしで3つ重ねる</strong>（三和音 / トライアド）ことです。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">コード名</th>
+                        <th style="width: 30%;">構成の仕組み</th>
+                        <th style="width: 25%;">特徴・響き</th>
+                        <th style="width: 20%;">具体例（Cの場合）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>メジャー（長三和音）</strong></td>
+                        <td>根音 ＋ 長3度 ＋ 短3度</td>
+                        <td>明るい、爽やか</td>
+                        <td><span class="badge badge-primary">C</span>（ド・ミ・ソ）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>マイナー（短三和音）</strong></td>
+                        <td>根音 ＋ 短3度 ＋ 長3度</td>
+                        <td>悲しい、暗い、切ない</td>
+                        <td><span class="badge badge-secondary">Cm</span>（ド・ミ♭・ソ）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section>
+            <h2>5. コード進行とメロディの3大セオリー</h2>
+            <p>コードに対してメロディを作る際、聴き手に心地よさやドラマを感じさせるための強力なガイドラインです。</p>
+            
+            <h3>①「コードトーン」と「ノンコードトーン」のバランス</h3>
+            <ul>
+                <li><strong>コードトーン（構成音）：</strong> メロディに使うと非常に安定します。フレーズの最初や最後（拍の頭）に置くと綺麗にハまります。</li>
+                <li><strong>ノンコードトーン（非構成音）：</strong> 鳴らした瞬間に心地よい緊張感（濁り）が生まれます。</li>
+            </ul>
+            <p>「ノンコードトーンで緊張させて、すぐ隣にあるコードトーンに移動して着地（解決）する」のがメロディ作りの王道です。</p>
+
+            <h3>② スケール（音階）に沿って作る</h3>
+            <p>その楽曲の「キー（調）」に基づいたスケール内の音を使えば、コードが次々に変わっても基本的に音が外れて聴こえることはありません。</p>
+
+            <h3>③ アヴォイドノート（避けるべき音）の回避</h3>
+            <p>スケール内の音であっても、特定のコードの時に「長く伸ばすと響きがめちゃくちゃに濁るから、一瞬通り過ぎるだけにしよう」という音が存在します。これを<strong>アヴォイドノート（回避音）</strong>と呼びます。</p>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section>
+            <h2>6. 全キー共通：アヴォイドノートの法則一覧</h2>
+            <p>アヴォイドノートはキーではなく、その瞬間鳴っている<strong>「コードの度数」</strong>と<strong>「スケール」</strong>の関係で自動的に決まります。（※以下はメジャーキーにおける各ダイアトニックコードの法則です）</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">度数</th>
+                        <th style="width: 20%;">コード例 (Key=C)</th>
+                        <th style="width: 25%;">コードトーン</th>
+                        <th style="width: 25%;">アヴォイドノート</th>
+                        <th style="width: 20%;">理由・解説</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>I</strong></td>
+                        <td><strong>C</strong> (CM7)</td>
+                        <td>ド・ミ・ソ・シ</td>
+                        <td><span class="badge badge-danger">ファ</span> (4th)</td>
+                        <td>3度の音（ミ）と半音で激しくぶつかるため。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>II</strong></td>
+                        <td><strong>Dm</strong> (Dm7)</td>
+                        <td>レ・ファ・ラ・ド</td>
+                        <td><strong>なし</strong></td>
+                        <td>基本アヴォイドなし。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>III</strong></td>
+                        <td><strong>Em</strong> (Em7)</td>
+                        <td>ミ・ソ・シ・レ</td>
+                        <td><span class="badge badge-danger">ド</span> (♭6th), <span class="badge badge-danger">ファ</span> (♭2nd)</td>
+                        <td>5度（シ）やルート（ミ）と半音でぶつかるため。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IV</strong></td>
+                        <td><strong>F</strong> (FM7)</td>
+                        <td>ファ・ラ・ド・ミ</td>
+                        <td><strong>なし</strong></td>
+                        <td>開放的なコードで、どの音も綺麗に響きます。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>V</strong></td>
+                        <td><strong>G</strong> (G7)</td>
+                        <td>ソ・シ・レ・ファ</td>
+                        <td><span class="badge badge-danger">ド</span> (4th)</td>
+                        <td>3度の音（シ）の響きを邪魔してしまうため。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VI</strong></td>
+                        <td><strong>Am</strong> (Am7)</td>
+                        <td>ラ・ド・ミ・ソ</td>
+                        <td><span class="badge badge-danger">レ</span> (11th) ※</td>
+                        <td>5度の音（ミ）と半音でぶつかるため。（※現代では容認傾向）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VII</strong></td>
+                        <td><strong>Bm(♭5)</strong></td>
+                        <td>シ・レ・ファ・ラ</td>
+                        <td><span class="badge badge-danger">ド</span> (♭2nd)</td>
+                        <td>ルート（シ）と半音でぶつかるため。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-box">
+                <p><strong>🎯 本質を見抜く「半音上の法則」</strong></p>
+                <p>難しく考えず、<strong>「メジャーコードのときは、3度の音（真ん中の音）の半音上がアヴォイドノートになる」</strong>と覚えましょう。コードのキャラクターを決める一番大事な3度の音に対して、メロディが半音上で乗っかると強烈な不協和音（短9度）を生んでしまうからです。</p>
+                <p>※マイナーコード（Amなど）の場合は、<strong>5度の音の半音上</strong>（Amならミの半音上のファ）がアヴォイドになります。</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 音楽理論基礎学習ガイド. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

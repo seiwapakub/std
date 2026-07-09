@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知るほど面白い、不動産と都市の歴史</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* 全体設計・リセット */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #fcfbf9; /* 温かみのある上質な白 */
+            color: #2c3539; /* 深みのあるチャコール */
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* カラー・フォント定義（高級感の演出） */
+        :root {
+            --primary-color: #0f2537; /* ディープネイビー */
+            --accent-color: #bfa15f;  /* セピアゴールド（真鍮色） */
+            --bg-light: #f4f1eb;      /* 薄いベージュ */
+            --text-muted: #666e75;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ヘッダー・メインビジュアル */
+        .hero {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            letter-spacing: 0.3em;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #e0e5e9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* メインコンテンツ・レイアウト */
+        .container {
+            max-width: 960px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #eaddca;
+            padding: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(15, 37, 55, 0.02);
+        }
+
+        .card-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-style: italic;
+            color: rgba(191, 161, 95, 0.15);
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            line-height: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 2px 12px;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* 2カラムレイアウト（並列表示） */
+        .flex-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .flex-box {
+            flex: 1;
+            background-color: #faf9f6;
+            padding: 25px;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .flex-box.modern {
+            border-top-color: var(--accent-color);
+            background-color: rgba(191, 161, 95, 0.04);
+        }
+
+        .flex-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .flex-box ul {
+            list-style-type: none;
+        }
+
+        .flex-box li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .flex-box p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        /* 都市開発セクション用のスタイル（タイムラインなど） */
+        .timeline {
+            margin-bottom: 35px;
+            border-left: 2px solid var(--bg-light);
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            position: absolute;
+            left: -25px;
+            top: 10px;
+            border-radius: 50%;
+        }
+
+        .time-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+        }
+
+        .info-block {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 25px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .info-block h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-block p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* フッター */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* レスポンシブ対応（スマホ表示） */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .card {
+                padding: 30px 20px;
+            }
+            .flex-container {
+                flex-direction: column;
+            }
+            .card-number {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-sub">HISTORY & FUTURE OF REAL ESTATE</p>
+            <h1 class="hero-title">土地が紡ぐ、<br>人と社会の物語</h1>
+            <p class="hero-desc">昔の「地主」から現代の「タワマン・再開発」まで。知っているようで知らない不動産の本質を、3つの視点から紐解きます。</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <div class="card-number">01</div>
+            <div class="card-content">
+                <span class="badge">不労所得の歴史</span>
+                <h2>資産としての「投資・財テク」</h2>
+                <p class="lead">お金持ちが不動産で富を増やす仕組みは、実は1000年前から変わりません。</p>
+                
+                <div class="flex-container">
+                    <div class="flex-box history">
+                        <h3>歴史を振り返る</h3>
+                        <ul>
+                            <li><strong>江戸時代の長屋経営：</strong> 豪商たちが土地を借りてアパート（長屋）を大量に建て、庶民から毎月「家賃」を集めるビジネスが定着。</li>
+                            <li><strong>昭和の土地神話：</strong> 「土地は絶対に値下がりしない」と誰もが信じ、バブル経済の引き金になりました。</li>
+                        </ul>
+                    </div>
+                    <div class="flex-box modern">
+                        <h3>現代はこうなっている</h3>
+                        <p>ただ土地を持てば儲かる時代は終わり、価値が上がる「都心・駅近」と、下がる「地方」の<strong>二極化</strong>が極まっています。</p>
+                        <p>一方で、スマホから1万円単位で不動産に投資できる「クラウドファンディング」が登場し、一般の人にも財テクが身近になりました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-number">02</div>
+            <div class="card-content">
+                <span class="badge">経済のバロメーター</span>
+                <h2>社会的ステータス（身分・信用）</h2>
+                <p class="lead">不動産を持っていることは、いつの時代も「最強の信用証明」でした。</p>
+                
+                <div class="flex-container">
+                    <div class="flex-box history">
+                        <h3>歴史を振り返る</h3>
+                        <ul>
+                            <li><strong>江戸〜明治の特権：</strong> 江戸時代は家持ちだけが一人前の市民とされ、明治時代には「土地の税金をたくさん払っている人」にしか選挙権がありませんでした。</li>
+                        </ul>
+                    </div>
+                    <div class="flex-box modern">
+                        <h3>現代はこうなっている</h3>
+                        <p>現代では「家がないと選挙に行けない」なんてことはありません。しかし、銀行から大きな融資を受ける際の<strong>「担保」</strong>として、今でも最大の信用になります。</p>
+                        <p>また、「都心のタワーマンションを所有すること」が、現代の新しい成功者のステータスシンボルとして機能しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-number">03</div>
+            <div class="card-number" style="right: auto; left: 40px; display: none;">03</div>
+            <div class="card-content">
+                <span class="badge">街づくりの目的</span>
+                <h2>都市開発の「目的」と「手法」</h2>
+                <p class="lead">日本の街づくりは、その時々の「社会の課題」を解決するために形を変えてきました。</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time-title">古代 〜 江戸・明治・昭和（拡大の歴史）</div>
+                        <p>かつては「城や最高権力者の権威を守るため」、近代は「火事に強い街にするため」、戦後は「増えすぎた人口を収容するため（郊外へのニュータウン）」と、<strong>街を外へ広げる目的</strong>が主流でした。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-title">現代の「大都市」（成熟・国際競争）</div>
+                        <p><strong>目的：世界に負けない国際競争力の強化</strong><br>古いビルをまとめ、1つの超高層ビルに「オフィス、タワーマンション、商業、最先端医療、学校、広大な緑地」のすべてを垂直に詰め込み、駅直結のエリアだけで生活が完結する立体都市を作っています。（例：麻布台ヒルズ、高輪ゲートウェイシティなど）</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-title">現代の「地方都市」（縮小・持続可能）</div>
+                        <p><strong>目的：人口減少に耐える持続可能性の確保</strong><br>郊外に広がりすぎた街の機能を、路面電車や主要駅の周りにギュッと縮める「コンパクトシティ」への転換が進んでいます。車がなくても高齢者が歩いて暮らせる街づくりが目標です。</p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h4>💡 実はここがすごい：現代の巨大ビルは「街の避難所」</h4>
+                    <p>今の新しい再開発ビルは、独自の巨大な自家発電装置や数日分の食料・水を備えています。災害時に数千人規模の帰宅困難者を受け入れる「砦（シェルター）」としての裏目的を持って設計されており、安全性を高める社会インフラになっています。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 不動産の歴史と現在地を学ぶ. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

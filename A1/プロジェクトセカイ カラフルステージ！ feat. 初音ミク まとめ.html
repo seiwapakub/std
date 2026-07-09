@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトセカイ カラフルステージ！ feat. 初音ミク まとめ</title>
+    <style>
+        :root {
+            --primary: #33bbff;
+            --secondary: #ff6699;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #666666;
+            --border-color: #e2e8f0;
+            
+            /* Unit Colors */
+            --leoni: #4455dd;
+            --momojan: #88dd44;
+            --vivid: #ee1177;
+            --wandasho: #ff9900;
+            --niigo: #884499;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #22223b 0%, #4a4e69 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: #c9ada7;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: #1e293b;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Unit Table */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .unit-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .tag-leoni { background-color: var(--leoni); }
+        .tag-momojan { background-color: var(--momojan); }
+        .tag-vivid { background-color: var(--vivid); }
+        .tag-wandasho { background-color: var(--wandasho); }
+        .tag-niigo { background-color: var(--niigo); }
+
+        /* Cards Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .relation-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .relation-card.sibling { border-left-color: #ff4757; }
+        .relation-card.childhood { border-left-color: #2ed573; }
+        .relation-card.special { border-left-color: #1e90ff; }
+
+        .relation-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .relation-type {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .relation-card p {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>プロジェクトセカイ カラフルステージ！ feat. 初音ミク</h1>
+        <p>作品概要 ＆ ユニット間・キャラクター関係性まとめ</p>
+        <span class="badge">アプリガイド</span>
+    </header>
+
+    <section>
+        <h2>基本情報</h2>
+        <p>『プロジェクトセカイ』は、現代の渋谷と、人々の「本当の想い」から生まれた不思議な世界「セカイ」を舞台に、初音ミクたちバーチャル・シンガーとオリジナルの若者たちが織りなすストーリーが楽しめるリズム＆アドベンチャーゲームです。</p>
+    </section>
+
+    <section>
+        <h2>5つの個性豊かなユニット</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ユニット名</th>
+                        <th>テーマ・ジャンル</th>
+                        <th>セカイの姿</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="unit-tag tag-leoni">Leo/need</span></td>
+                        <td>すれ違いを乗り越えたバンド</td>
+                        <td>教室のセカイ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="unit-tag tag-momojan">MORE MORE JUMP！</span></td>
+                        <td>夢を諦めないアイドルユニット</td>
+                        <td>ステージのセカイ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="unit-tag tag-vivid">Vivid BAD SQUAD</span></td>
+                        <td>ストリートカルチャー・ヒップホップ</td>
+                        <td>ストリートのセカイ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="unit-tag tag-wandasho">ワンダーランズ×ショウタイム</span></td>
+                        <td>笑顔を届けるハチャメチャショーユニット</td>
+                        <td>テーマパークのセカイ</td>
+                    </tr>
+                    <tr>
+                        <td><span class="unit-tag tag-niigo">25時、ナイトコードで。</span></td>
+                        <td>悩みを抱えるアンダーグラウンドユニット</td>
+                        <td>無人のセカイ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>実の兄弟・姉妹関係</h2>
+        <div class="card-grid">
+            <div class="relation-card sibling">
+                <h3>天馬 司 × 天馬 咲希 <span class="relation-type">兄・妹</span></h3>
+                <p><strong>ワンダショ × レオニ</strong><br>妹思いの熱血な兄と、兄が大好きな妹。幼少期に咲希を元気付けるために見せたショーが、司のスターを目指すきっかけ。</p>
+            </div>
+            <div class="relation-card sibling">
+                <h3>日野森 雫 × 日野森 志歩 <span class="relation-type">姉・妹</span></h3>
+                <p><strong>モモジャン × レオニ</strong><br>妹を溺愛するおっとりした姉と、ツンデレな妹。志歩は表向き素っ気ないものの、陰では姉をとても大切に思っている。</p>
+            </div>
+            <div class="relation-card sibling">
+                <h3>東雲 絵名 × 東雲 彰人 <span class="relation-type">姉・弟</span></h3>
+                <p><strong>ニーゴ × ビビバス</strong><br>勝手気ままな姉と面倒見が良い弟。喧嘩が絶えないが、お互いの苦悩や努力を一番よく理解し合っているリアルな姉弟。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>幼馴染・特別な交友関係</h2>
+        <div class="card-grid">
+            <div class="relation-card childhood">
+                <h3>Leo/needの4人 <span class="relation-type">幼馴染</span></h3>
+                <p>星乃一歌、天馬咲希、望月穂波、日野森志歩の4人は、一度すれ違いながらも再び結ばれた幼馴染同士。</p>
+            </div>
+            <div class="relation-card childhood">
+                <h3>神代 類 × 草薙 寧々 <span class="relation-type">隣の家の幼馴染</span></h3>
+                <p><strong>ワンダショ × ワンダショ</strong><br>隣同士の家で育った幼馴染。周囲に馴染めなかった寧々を類がショーの世界へと引き込んだ。</p>
+            </div>
+            <div class="relation-card special">
+                <h3>天馬兄妹 × 青柳 冬弥 <span class="relation-type">家族ぐるみの付き合い</span></h3>
+                <p><strong>ワンダショ/レオニ × ビビバス</strong><br>冬弥にとって天馬家は温かい居場所。司を「司先輩」と呼び、実の兄のように慕っている。</p>
+            </div>
+            <div class="relation-card special">
+                <h3>望月 穂波 × 宵崎 奏 <span class="relation-type">家事代行アルバイト</span></h3>
+                <p><strong>レオニ × ニーゴ</strong><br>穂波が奏の家で家事手伝いのアルバイトをしており、健康管理や生活面を温かくサポートしている。</p>
+            </div>
+            <div class="relation-card special">
+                <h3>白石 杏 × 桐谷 遥 <span class="relation-type">中学の同級生</span></h3>
+                <p><strong>ビビバス × モモジャン</strong><br>遥がアイドル活動を休止して転校してきた際も、気兼ねなく話せる親友として寄り添っていた。</p>
+            </div>
+            <div class="relation-card special">
+                <h3>暁山 瑞希 × 神代 類 <span class="relation-type">中学時代の屋上仲間</span></h3>
+                <p><strong>ニーゴ × ワンダショ</strong><br>中学時代、周りと馴染めなかった者同士として屋上で時間を過ごした、互いの理解者。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© SEGA / © Colorful Palette Inc. / © Crypton Future Media, INC. www.piapro.net All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

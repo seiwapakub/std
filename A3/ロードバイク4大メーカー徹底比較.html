@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【高校生向け】ロードバイク4大メーカー徹底比較！あなたにピッタリのブランドはどれ？</title>
+    <style>
+        :root {
+            --primary-giant: #0056b3;
+            --secondary-giant: #e6f0fa;
+            --primary-merida: #4ba72a;
+            --secondary-merida: #edf7eb;
+            --primary-trek: #e2183c;
+            --secondary-trek: #fbe8eb;
+            --primary-nesto: #00a0e9;
+            --secondary-nesto: #e6f5fc;
+            --text-color: #333333;
+            --bg-color: #f4f6f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding-bottom: 80px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #111111 0%, #333333 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 6px solid #333;
+        }
+
+        .intro-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 50px 0 30px;
+            color: #222;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff4757;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 4社カードレイアウト */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .brand-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .brand-header {
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .giant-header { background-color: var(--primary-giant); }
+        .merida-header { background-color: var(--primary-merida); }
+        .trek-header { background-color: var(--primary-trek); }
+        .nesto-header { background-color: var(--primary-nesto); }
+
+        .brand-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 8px;
+            color: #222;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .giant-tag { background-color: var(--secondary-giant); color: var(--primary-giant); }
+        .merida-tag { background-color: var(--secondary-merida); color: var(--primary-merida); }
+        .trek-tag { background-color: var(--secondary-trek); color: var(--primary-trek); }
+        .nesto-tag { background-color: var(--secondary-nesto); color: var(--primary-nesto); }
+
+        .brand-body ul {
+            list-style-type: none;
+        }
+
+        .brand-body li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .brand-body li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .giant-body li::before { color: var(--primary-giant); }
+        .merida-body li::before { color: var(--primary-merida); }
+        .trek-body li::before { color: var(--primary-trek); }
+        .nesto-body li::before { color: var(--primary-nesto); }
+
+        /* バトル・比較セクション */
+        .battle-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .battle-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .battle-card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .battle-title {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            background: #222222;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .vs-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .vs-item {
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .vs-giant { background-color: var(--secondary-giant); border-left: 5px solid var(--primary-giant); }
+        .vs-merida { background-color: var(--secondary-merida); border-left: 5px solid var(--primary-merida); }
+        .vs-trek { background-color: var(--secondary-trek); border-left: 5px solid var(--primary-trek); }
+        .vs-nesto { background-color: var(--secondary-nesto); border-left: 5px solid var(--primary-nesto); }
+
+        /* 選び方ガイド */
+        .summary-box {
+            background: linear-gradient(135deg, #1e272e 0%, #2c3e50 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .summary-box h2 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .choice-guide {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .choice-guide {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .choice-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .choice-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .choice-giant h3 { color: #74b9ff; }
+        .choice-merida h3 { color: #55efc4; }
+        .choice-trek h3 { color: #ff7675; }
+        .choice-nesto h3 { color: #55e6c1; }
+
+        .choice-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ロードバイク4大メーカー徹底比較！</h1>
+            <p>GIANT / MERIDA / TREK / NESTO 〜高校生のための自転車選びバイブル〜</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro-card">
+            <h2>君にぴったりのロードバイクはどれ？</h2>
+            <p>ロードバイク選びで必ず名前が上がる世界的なメガブランドから、日本の環境を考え尽くした定番ブランドまで、高校生の部活・通学・趣味に最適な4社を集めました！それぞれの歴史や強み、開発思想の違いをすっきり整理して、最高の相棒を見つけ出そう！</p>
+        </div>
+
+        <h2 class="section-title">4大ブランドの特徴をチェック</h2>
+
+        <div class="brand-grid">
+            <!-- GIANT Card -->
+            <div class="brand-card">
+                <div class="brand-header giant-header">
+                    <h2>GIANT (ジャイアント)</h2>
+                </div>
+                <div class="brand-body giant-body">
+                    <span class="tag giant-tag">理系・圧倒的な技術の巨人</span>
+                    <h3>特徴：とにかくマジメなコスパ最強の優等生</h3>
+                    <ul>
+                        <li><strong>糸から編み上げる自社製造：</strong> カーボンの原糸からシートを編み、フレーム完成まで100%インハウスで行う驚異の技術力。</li>
+                        <li><strong>コスパの限界突破：</strong> 世界最大の規模を活かし、同じ価格帯であれば他社よりもワンランク上のパーツを装備しています。</li>
+                        <li><strong>最先端のデータ主義：</strong> 数値的な軽さや空力をとことん追い求める、合理的で非の打ち所がないモノづくり。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MERIDA Card -->
+            <div class="brand-card">
+                <div class="brand-header merida-header">
+                    <h2>MERIDA (メリダ)</h2>
+                </div>
+                <div class="brand-body merida-body">
+                    <span class="tag merida-tag">欧州センス × 職人技の実力派</span>
+                    <h3>特徴：見た目も走りもエッジが効いたレーサー</h3>
+                    <ul>
+                        <li><strong>ドイツ設計 × 台湾製造：</strong> 最先端トレンドが集まるドイツのR&Dセンターで開発され、世界第2位の高度な台湾自社工場で製造。</li>
+                        <li><strong>シワのない美しい成型：</strong> フレーム内部をツルツルに仕上げ、強度を極限まで高める独自の特許技術（AWS）を導入。</li>
+                        <li><strong>高いデザイン性：</strong> ヨーロッパの感性が光る、派手でアグレッシブなカラーリングやシャープな形状が超カッコいい！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TREK Card -->
+            <div class="brand-card">
+                <div class="brand-header trek-header">
+                    <h2>TREK (トレック)</h2>
+                </div>
+                <div class="brand-body trek-body">
+                    <span class="tag trek-tag">宇宙開発レベル・技術革新の王様</span>
+                    <h3>特徴：世界を圧倒するテクノロジーと勝利の歴史</h3>
+                    <ul>
+                        <li><strong>軍事・宇宙規格の超カーボン：</strong> 航空宇宙規格を満たす独自の「OCLVカーボン」を開発。軽さと強度は業界最高峰。</li>
+                        <li><strong>極上の乗り心地を科学する：</strong> フレーム自体をしならせて衝撃を吸収する「IsoSpeed」など、独自の快適・高速化技術を次々発明。</li>
+                        <li><strong>最高峰のステータス性：</strong> ツール・ド・フランスなどの大レースを制覇し続ける、誰もが一度は憧れるアメリカの王道トップブランド。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NESTO Card -->
+            <div class="brand-card">
+                <div class="brand-header nesto-header">
+                    <h2>NESTO (ネスト)</h2>
+                </div>
+                <div class="brand-body nesto-body">
+                    <span class="tag nesto-tag">日本人のための「次のふつう」</span>
+                    <h3>特徴：日本の高校生のリアルに寄り添うタフな相棒</h3>
+                    <ul>
+                        <li><strong>日本の道路・体型にジャスト：</strong> 国内メーカー（ホダカ）のブランド。小柄でも乗りやすく、段差やストップ＆ゴーが多い日本の環境に最適化。</li>
+                        <li><strong>クラス最軽量の爆速アルミ：</strong> 定番の「Altarna（オルタナ）」シリーズは、10万円台前半ながら同価格帯で最も軽くて速いと大ヒット。</li>
+                        <li><strong>毎日の通学・普段使いも安心：</strong> スタンドやライトをスマートに付けやすく、部活や毎日の通学にガシガシ使える耐久性を確保。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">目的別の注目モデル対決！</h2>
+
+        <div class="battle-grid">
+            
+            <div class="battle-card">
+                <div class="battle-title">【軽量・万能オールラウンダー】</div>
+                <div class="vs-box">
+                    <div class="vs-item vs-giant">
+                        <strong>GIANT：TCR</strong><br>
+                        現代ロードバイクの原型（スローピング）を作った伝説の万能機。坂も平地もこれ1台でOK。
+                    </div>
+                    <div class="vs-item vs-merida">
+                        <strong>MERIDA：SCULTURA</strong><br>
+                        プロの山岳ステージで活躍。圧倒的な軽さに加え、スマートな見た目と高い快適性が魅力。
+                    </div>
+                </div>
+            </div>
+
+            <div class="battle-card">
+                <div class="battle-title">【空力・スピード特化型】</div>
+                <div class="vs-box">
+                    <div class="vs-item vs-giant">
+                        <strong>GIANT：PROPEL</strong><br>
+                        「これがエアロバイク？」と疑うほど普通のロード並みに軽い。平地も坂も爆速で駆け抜けるマシン。
+                    </div>
+                    <div class="vs-item vs-merida">
+                        <strong>MERIDA：REACTO</strong><br>
+                        最高に成功したエアロバイクの一つ。極太の未来的なシルエットが文句なしにクールと大人気。
+                    </div>
+                </div>
+            </div>
+
+            <div class="battle-card">
+                <div class="battle-title">【至高のロマン・極限テクノロジー】</div>
+                <div class="vs-box">
+                    <div class="vs-item vs-trek">
+                        <strong>TREK：Madone（マドン）</strong><br>
+                        空力を極め尽くした、走る芸術品のような最速エアロロードバイク。
+                    </div>
+                    <div class="vs-item vs-trek">
+                        <strong>TREK：Domane（ドマーネ）</strong><br>
+                        魔法の絨毯のような衝撃吸収性。ロングライド（長距離）を最高にラクに、速く走るための1台。
+                    </div>
+                </div>
+            </div>
+
+            <div class="battle-card">
+                <div class="battle-title">【等身大の戦闘力・コスパ最前線】</div>
+                <div class="vs-box">
+                    <div class="vs-item vs-nesto">
+                        <strong>NESTO：Altarna（オルタナ）</strong><br>
+                        10万円台前半で手に入る「ガチで速い」軽量アルミロード。部活や通学の強い味方。
+                    </div>
+                    <div class="vs-item vs-nesto">
+                        <strong>NESTO：GAVEL（ガベル）</strong><br>
+                        太いタイヤで砂利道や段差もヘッチャラなグラベルロード。荷物を積んでキャンプや旅に出るのも得意！
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-box">
+            <h2>君はどっち？ 4大ブランド選び方のヒント</h2>
+            <p style="text-align: center; margin-bottom: 25px; opacity: 0.9;">どのブランドも世界トップクラスの品質です。迷ったら自分の「一番譲れないポイント」で選ぼう！</p>
+            
+            <div class="choice-guide">
+                <div class="choice-card choice-giant">
+                    <h3>GIANTが向いている人</h3>
+                    <p>・「同じ予算の中で少しでも高性能・高スペックなパーツを積みたい！」というコスパ徹底重視派</p>
+                    <p>・無駄がなく、すっきりとしたスマートでマジメなデザインが好きな人</p>
+                </div>
+                <div class="choice-card choice-merida">
+                    <h3>MERIDAが向いている人</h3>
+                    <p>・「とにかく見た目がレーシーでカッコよく、乗っていてテンションが上がるバイクがいい！」というデザイン重視派</p>
+                    <p>・ヨーロッパ風の派手でエッジの効いたカラーや極太のフレームが好きな人</p>
+                </div>
+                <div class="choice-card choice-trek">
+                    <h3>TREKが向いている人</h3>
+                    <p>・「せっかく乗るなら誰もが憧れる、世界最高峰のブランドを所有したい！」というステータス・ロマン派</p>
+                    <p>・最先端の宇宙スペックカーボンや、至高の乗り心地（サスペンション技術）を体感したい人</p>
+                </div>
+                <div class="choice-card choice-nesto">
+                    <h3>NESTOが向いている人</h3>
+                    <p>・「予算は抑えつつ、毎日の通学や週末のサイクリングで友達のクロスバイクをぶっちぎりたい！」という等身大のスピード派</p>
+                    <p>・スタンドなどの実用パーツが付けやすく、日本の環境でガシガシ使えるタフさを求める人</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

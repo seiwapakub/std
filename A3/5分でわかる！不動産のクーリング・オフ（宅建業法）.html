@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5分でわかる！不動産のクーリング・オフ（宅建業法）</title>
+    <style>
+        /* 全体のリセットと共通設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333333;
+            background-color: #f4f8f5; /* 薄い緑がかった背景 */
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #1e5631; /* 深い緑 */
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* メインコンテンツの外枠 */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* セクション共通 */
+        section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #1e5631;
+            font-size: 1.5rem;
+            border-left: 5px solid #4c9a2a; /* アクセントの緑 */
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* 強調文字 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #c8e6c9 40%); /* 緑のマーカー風 */
+            font-weight: bold;
+        }
+
+        /* 場所の判定テーブル */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .box {
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .box-ok {
+            background-color: #e8f5e9; /* 薄い緑 */
+            border: 2px solid #81c784;
+        }
+        .box-ok h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .box-ng {
+            background-color: #ffebee; /* 薄い赤（対比用） */
+            border: 2px solid #e57373;
+        }
+        .box-ng h3 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* 手続き（テンプレート）の枠 */
+        .template-box {
+            background-color: #f9fbf9;
+            border: 1px dashed #4c9a2a;
+            padding: 20px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>不動産のクーリング・オフ解説</h1>
+        <p>宅建業法に基づく、知っておくべき「契約解除」の基本ルール</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>クーリング・オフとは？</h2>
+            <p>不動産の売買契約という一生に一度の大きな買い物において、買い手が<span class="highlight">冷静に考え直す時間（8日間）</span>を与えるための制度です。</p>
+            <p>一定の条件を満たしていれば、支払った手付金は<strong>全額返金</strong>され、違約金を支払うことなく無条件で契約を解除することができます。</p>
+        </section>
+
+        <section>
+            <h2>クーリング・オフができる条件</h2>
+            <p>宅建業法のクーリング・オフは、一般的な訪問販売とは異なり、<strong>「契約や申し込みをした場所」</strong>がどこかが非常に重要になります。</p>
+
+            <div class="grid-container">
+                <div class="box box-ok">
+                    <h3>⭕️ 解除できる場所</h3>
+                    <ul>
+                        <li>喫茶店・ホテルのロビー</li>
+                        <li>自宅（※自分で呼び出していない場合）</li>
+                        <li>勤務先</li>
+                    </ul>
+                </div>
+                <div class="box box-ng">
+                    <h3>❌ 解除できない場所</h3>
+                    <ul>
+                        <li>不動産業者の事務所（店舗）</li>
+                        <li>現地案内所（モデルルームなど）</li>
+                        <li>買い手が「自宅で契約したい」と申し出た場合の自宅</li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+            <p><strong>【その他の必須条件】</strong></p>
+            <ul>
+                <li>売主が<strong>宅建業者（プロ）</strong>で、買主が<strong>一般個人（アマ）</strong>であること。</li>
+                <li>クーリング・オフについて書面で告げられた日から<strong>8日以内</strong>であること。</li>
+                <li>物件の引き渡しを受けておらず、代金も全額支払っていないこと。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>クーリング・オフの手続き方法</h2>
+            <p>クーリング・オフは必ず<span class="highlight">「書面」または「電磁的記録（メール等）」</span>で行う必要があります。後から「聞いていない」と言われるトラブルを防ぐため、郵便局の<strong>「内容証明郵便」</strong>などを利用するのが確実です。</p>
+            
+            <p><strong>【書面に記載する文面の例】</strong></p>
+            <div class="template-box">通知書
+
+私は、令和〇年〇月〇日、貴社と締結した下記の売買契約について、宅地建物取引業法第37条の2の規定に基づき、解除いたします。
+
+・物件名：〇〇マンション 〇〇号室
+・契約日：令和〇年〇月〇日
+・売主：〇〇不動産株式会社
+
+既に支払った手付金〇〇万円を速やかに返金し、今後の手続きについてご連絡ください。
+
+令和〇年〇月〇日
+（あなたの住所・氏名）
+
+〇〇不動産株式会社 御中</div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 不動産のクーリング・オフを学ぼう Webサイト</p>
+    </footer>
+
+</body>
+</html>

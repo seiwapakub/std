@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrs. GREEN APPLE // REAL REASON ULTRA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;900&family=Space+Grotesk:wght@500;700&family=Noto+Sans+JP:wght@500;900&display=swap');
+
+        :root {
+            --bg-color: #05070f;
+            --card-bg: #101424;
+            --neon-green: #00ff66;
+            --neon-blue: #00f0ff;
+            --neon-pink: #ff007f;
+            --neon-purple: #bd00ff;
+            --text-main: #ffffff;
+            --text-sub: #8f9cae;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 32px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ヘッダービジュアル */
+        .hero {
+            background: linear-gradient(180deg, rgba(0, 255, 102, 0.2) 0%, rgba(5, 7, 15, 0) 100%);
+            padding: 40px 24px 24px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--neon-green);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff 30%, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-top: 16px;
+            line-height: 1.6;
+            padding: 0 12px;
+        }
+
+        /* コンテンツエリア */
+        .content {
+            padding: 0 24px 40px 24px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--neon-blue);
+            margin-top: 36px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        /* カード風リスト */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .item-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 240, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--neon-pink);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .card-tag.blue { color: var(--neon-blue); }
+        .card-tag.purple { color: var(--neon-purple); }
+
+        .item-card p {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .item-card strong {
+            color: #fff;
+            background: linear-gradient(180deg,transparent 60%, rgba(0, 255, 102, 0.3) 0%);
+            padding: 0 2px;
+        }
+
+        /* まとめボックス */
+        .punchline-box {
+            background: #fff;
+            color: #000;
+            padding: 24px;
+            border-radius: 24px;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 102, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .punchline-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: var(--text-sub);
+            letter-spacing: 2px;
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="hero">
+        <span class="badge">PHASE 2 // ULTRA DEEP INFO</span>
+        <h1>Mrs. GREEN<br>APPLE</h1>
+        <p class="intro">スクロール止まらんやつ。ミセスの沼をさらに深掘り。ライト層からガチ勢まで全員に刺さる核心部分、追加で置いていくわ。⚡️</p>
+    </div>
+
+    <div class="content">
+        <div class="section-title">🧠 #01 / 大森元貴の才能バグってる</div>
+        <div class="card-list">
+            <div class="item-card">
+                <span class="card-tag">CREATIVE</span>
+                <p><strong>中学生から曲作りまくり</strong>とか天才のそれ。デビュー時点でストック何百曲あったの普通にヤバない？</p>
+            </div>
+            <div class="item-card">
+                <span class="card-tag">LYRICS</span>
+                <p>メロディ超ポップでアガるのに、歌詞よく見たら<strong>「人間の孤独」</strong>とか<strong>「死生観」</strong>とかエグいくらい重い。このギャップにみんな情緒狂わされるんよ。</p>
+            </div>
+        </div>
+
+        <div class="section-title">🔄 #02 / フェーズ1と2のビジュ変が神</div>
+        <div class="card-list">
+            <div class="item-card">
+                <span class="card-tag">PHASE 1</span>
+                <p>休止前は5人組のザ・王道ロックバンド。私服っぽいナチュラルさで泥臭く熱いライブスタイル。エモの極み。</p>
+            </div>
+            <div class="item-card">
+                <span class="card-tag">PHASE 2</span>
+                <p>3人で再始動してからの進化えぐい。髪色カラフル、バチバチのメイクで、ロックバンドの概念壊して<strong>キレキレのダンス踊りながら完璧に歌う</strong>とか前代未聞すぎ。</p>
+            </div>
+        </div>
+
+        <div class="section-title">🎸 #03 / 楽器隊のスキルが異次元</div>
+        <div class="card-list">
+            <div class="item-card">
+                <span class="card-tag">GUITAR</span>
+                <p>ひろぱ（若井）のギターマジで指どうなってんの？『ライラック』の超高速フレーズとかをライブで<strong>涼しい顔して弾いてるのバケモノ</strong>すぎる。</p>
+            </div>
+            <div class="item-card">
+                <span class="card-tag">KEYBOARD</span>
+                <p>りょうちゃん（藤澤）は元ガチのクラシック勢。ミセスのあのキラキラ感のベース作ってるの完全にこの人だし、ライブの盛り上げ隊長なのも最高。</p>
+            </div>
+        </div>
+
+        <div class="section-title">🎧 #04 / 単なる流行りじゃない「聴き継がれる名曲」</div>
+        <div class="card-list">
+            <div class="item-card">
+                <span class="card-tag blue">SOUND</span>
+                <p>TikTokとかで切り取られがちだけど、実はアルバム丸ごと聴いた時の満足感が異常。<strong>イントロからアウトロまで完璧に計算された音の配置</strong>は、完全に音フェチ殺し。</p>
+            </div>
+            <div class="item-card">
+                <span class="card-tag blue">MESSAGE</span>
+                <p>『ケセラセラ』とかもそうだけど、ただ「頑張れ」って言うんじゃなくて、<strong>「ボロボロな君もそのままで美しい」</strong>っていう全肯定のスタンス。これが今の時代にぶっ刺さるんよね。</p>
+            </div>
+        </div>
+
+        <div class="section-title">🎪 #05 / ドーム・スタジアム級の異世界ライブ</div>
+        <div class="card-list">
+            <div class="item-card">
+                <span class="card-tag purple">LIVE TECH</span>
+                <p>ライブの規模感がもはや映画。レーザー、映像、特効、すべてが規格外。それでいて<strong>大森元貴の生歌が音源を余裕で超えてくる</strong>から、鳥肌止まらん。</p>
+            </div>
+            <div class="item-card">
+                <span class="card-tag purple">MEMBER</span>
+                <p>あんな大舞台なのに、MCになると3人がめちゃくちゃワチャワチャ話し出すの尊すぎ。<strong>「実力世界クラスなのに距離感近め」</strong>なのがファンを一生離さない理由。</p>
+            </div>
+        </div>
+
+        <div class="punchline-box">
+            ただのトレンドじゃなくて、何年経っても色褪せない「本物の音楽」を鳴らしてるから、ミセスは一生最強なんよ。🍏✨
+        </div>
+
+        <div class="footer">
+            © 2026 MGA UNOFFICIAL ARCHIVE // ALL RIGHTS RESERVED
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

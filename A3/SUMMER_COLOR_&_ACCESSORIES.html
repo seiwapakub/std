@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMER COLOR & ACCESSORIES</title>
+    <style>
+        /* ==========================================================================
+           RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.7;
+            padding: 60px 20px;
+            letter-spacing: 0.03em;
+        }
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           HEADER
+           ========================================================================== */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #000000;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 12px;
+            color: #666666;
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================================================
+           MAIN CONTENT (STYLING CARDS)
+           ========================================================================== */
+        .card {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .card:last-of-type {
+            border-bottom: none;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        .card-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #888888;
+            margin-bottom: 4px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .card-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 3px;
+            height: 16px;
+            background-color: #000000;
+        }
+        .section-block {
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 4px;
+            letter-spacing: 0.08em;
+        }
+        .section-content {
+            font-size: 13.5px;
+            color: #333333;
+        }
+        .highlight {
+            font-weight: 700;
+            color: #000000;
+            background-color: #f0f0f0;
+            padding: 1px 4px;
+        }
+
+        /* ==========================================================================
+           ADVICE BOX
+           ========================================================================== */
+        .advice-box {
+            border: 1px solid #000000;
+            padding: 30px 25px;
+            margin-top: 20px;
+            background-color: #ffffff;
+        }
+        .advice-box h2 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+        }
+        .advice-item {
+            font-size: 13px;
+            margin-bottom: 15px;
+            color: #333333;
+        }
+        .advice-item:last-child {
+            margin-bottom: 0;
+        }
+        .advice-item strong {
+            color: #000000;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 10px;
+            color: #aaaaaa;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>SUMMER COLOR & ACCESSORIES</h1>
+        <div class="subtitle">夏を彩るカラーコーディネートとアクセントのまとめ</div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-number">STYLE 01</div>
+            <div class="card-title">王道の爽やかサーフスタイル</div>
+            
+            <div class="section-block">
+                <div class="section-title">Color Palette</div>
+                <div class="section-content"><span class="highlight">スカイブルー × ホワイト</span> （青い空と白い雲、澄んだ海をイメージ）</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Point</div>
+                <div class="section-content">誰が見ても爽やかで清潔感抜群。白の面積を多めにするとより涼しげな印象に。</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Recommended Accessories</div>
+                <div class="section-content"><span class="highlight">シルバーアクセサリー / クリア素材</span><br>ひんやりとした輝きのシルバーや、アクリルリング・クリアバッグを合わせることで涼しげな雰囲気が際立ちます。</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">STYLE 02</div>
+            <div class="card-title">元気いっぱい！ひまわりコーデ</div>
+            
+            <div class="section-block">
+                <div class="section-title">Color Palette</div>
+                <div class="section-content"><span class="highlight">マスタードイエロー × インディゴブルー（デニム）</span> （夏の太陽とひまわり畑をイメージ）</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Point</div>
+                <div class="section-content">鮮やかな黄色も、濃いめのデニムと合わせることで派手になりすぎず綺麗にまとまります。</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Recommended Accessories</div>
+                <div class="section-content"><span class="highlight">ゴールドアクセサリー / ブラウンのレザー</span><br>黄色と相性の良いゴールドでヘルシーな華やかさをプラス。ベルトやサンダルにブラウンを差すとグッと引き締まります。</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">STYLE 03</div>
+            <div class="card-title">大人っぽいリゾート風</div>
+            
+            <div class="section-block">
+                <div class="section-title">Color Palette</div>
+                <div class="section-content"><span class="highlight">テラコッタ × カーキ（またはベージュ）</span> （夕暮れのビーチやアースカラーの自然をイメージ）</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Point</div>
+                <div class="section-content">少し落ち着いたトーンながら、夏の強い日差しにめちゃくちゃ映えるお洒落上級者カラー。</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Recommended Accessories</div>
+                <div class="section-content"><span class="highlight">ウッド（木製） / リネン・キャンバス素材</span><br>大ぶりのウッドビーズネックレスや、ナチュラルなキャンバス地のトートバッグがベストマッチ。リゾート感が高まります。</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">STYLE 04</div>
+            <div class="card-title">トレンド感のある爽快コンビ</div>
+            
+            <div class="section-block">
+                <div class="section-title">Color Palette</div>
+                <div class="section-content"><span class="highlight">ミントグリーン × ライトグレー</span> （爽やかなミントソーダやひんやりした空気をイメージ）</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Point</div>
+                <div class="section-content">パステルカラーをグレーで引き締めることで、甘くなりすぎずスタイリッシュに着こなせます。</div>
+            </div>
+            
+            <div class="section-block">
+                <div class="section-title">Recommended Accessories</div>
+                <div class="section-content"><span class="highlight">パール / ホワイトの小物</span><br>カジュアルな淡水パールのネックレスや、真っ白なスニーカー・キャップを合わせると、清潔感のあるストリートスタイルが完成。</div>
+            </div>
+        </div>
+
+        <div class="advice-box">
+            <h2>SUMMER STYLE TIPS</h2>
+            <div class="advice-item">
+                <strong>1. 派手めな色に挑戦したい時</strong>
+                Tシャツや小物（バッグ、スニーカー、帽子など）で1色だけ鮮やかな色を取り入れると、失敗せずに夏らしさを全開にできます。
+            </div>
+            <div class="advice-item">
+                <strong>2. 迷ったときの夏の鉄板ワンポイント</strong>
+                どのコーディネートでも、「黒のサングラス」を胸元に引っ掛けたり、「シルバーの細めバングル」を腕につけたりするだけで、一気に夏のおしゃれ度がアップします。
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; SUMMER STYLE GUIDE. ALL RIGHTS RESERVED.</p>
+    </footer>
+</div>
+
+</body>
+</html>
