@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>3DCGキャラクターモデラーへの道 | 職業ガイド</title>
+    <style>
+        /* --- ここからCSS（デザインの設定） --- */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            color: #2c3e50;
+            background-color: #f4f7f9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .header p {
+            margin: 12px 0 0 0;
+            font-size: 16px;
+            color: #e0e8f5;
+        }
+        .intro-box {
+            background-color: #ffffff;
+            border-left: 5px solid #2a5298;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .intro-box p {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 500;
+            color: #34495e;
+        }
+        h2 {
+            font-size: 22px;
+            color: #1e3c72;
+            border-bottom: 2px solid #d0daf0;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 18px;
+            color: #2a5298;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0 0 10px 0;
+            font-size: 15px;
+        }
+        .grid-table {
+            width: 100%;
+            margin-bottom: 30px;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .grid-table th {
+            background-color: #2a5298;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: left;
+            padding: 15px;
+        }
+        .grid-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e1e8f0;
+            font-size: 14px;
+        }
+        .grid-table tr:last-child td {
+            border-bottom: none;
+        }
+        .card-light {
+            background-color: #ffffff;
+            border: 1px solid #e1e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e6f0fa;
+            color: #1e3c72;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        ol, ul {
+            margin: 0 0 25px 0;
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .footer {
+            margin-top: 60px;
+            padding: 20px 0;
+            border-top: 1px solid #d0daf0;
+            text-align: center;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        /* --- ここまでCSS --- */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>3DCGキャラクターモデラー キャリアガイド</h1>
+        <p>夢を現実に。2Dイラストを立体世界へ翻訳するプロフェッショナルを目指すための必須スキルと就職戦略</p>
+    </div>
+
+    <div class="intro-box">
+        <p>キャラクターモデラーは、ゲーム、アニメ、映画、メタバースなどの発展に伴い、世界中で非常に需要が高まっているクリエイティブ職種です。本ガイドでは、就職・転職活動（ポートフォリオ構築）で圧倒的に有利になるための技術とロードマップを体系的に解説します。</p>
+    </div>
+
+    <h2>1. 就職を有利にする「4つのコアスキル」</h2>
+    <p>企業が採用選考時に最も重視する、実践的なテクニカルスキルです。</p>
+
+    <div class="card-light">
+        <span class="badge">必須知識</span>
+        <h3>① 美術解剖学（アナトミ）の圧倒的理解</h3>
+        <p>人間の骨格や筋肉の構造を正しく理解していることは、高品質なモデル作成の絶対条件です。これが欠けていると、キャラクターを動かした際（アニメーション時）に関節が潰れたり、不自然な形に変形してしまいます。デッサンやクロッキーによる日常的なトレーニングが有利な土台を作ります。</p>
+    </div>
+
+    <div class="card-light">
+        <span class="badge">トレンド技術</span>
+        <h3>② デジタルスカルプティング能力</h3>
+        <p>現在の業界基準では、粘土をこねるように数百万ポリゴンを直感的に造形する「スカルプティング」が主流です。服のシワ、髪の繊細な毛流れ、皮膚の質感、クリーチャーのディテールを表現する表現力が求められます。<b>ZBrush</b>の習得が最も有利ですが、まずは<b>Blender</b>のスカルプト機能からでも十分に始められます。</p>
+    </div>
+
+    <div class="card-light">
+        <span class="badge">実務直結</span>
+        <h3>③ アニメーションを意識したトポロジー（割りの流れ）設計</h3>
+        <p>ただ見た目が美しいだけでなく、「動かしやすいデータ」を作れるモデラーは企業から極めて高く評価されます。特に顔（目元・口元）のポリゴンの流れが綺麗に整っていないと、表情をつけた際に引きつりが発生します。後工程の「アニメーター」に配慮できるスキルは強力なアピールポイントになります。</p>
+    </div>
+
+    <div class="card-light">
+        <span class="badge">デザインセンス</span>
+        <h3>④ 2D原画の魅力を三次元に落とし込む「翻訳力」</h3>
+        <p>キャラクターデザイナーが描いた2Dイラストには、固有の「嘘（絵のデフォルメや特定の角度でのみ成立する美しさ）」が含まれています。それをあらゆる角度から見ても美しく、かつ原画のニュアンスを殺さずに立体化するセンスは、選考時の決定打となります。</p>
+    </div>
+
+    <h2>2. 主要3Dソフトと業界のスタンス</h2>
+    <table class="grid-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">ソフトウェア名</th>
+                <th style="width: 25%;">主な用途</th>
+                <th style="width: 50%;">就職における位置づけ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Maya</strong></td>
+                <td>業界標準総合3Dソフト</td>
+                <td>国内・海外の主要ゲーム会社やアニメ制作会社の多くがメインツールとして採用。習得していると応募できる企業の幅が圧倒的に広がります。</td>
+            </tr>
+            <tr>
+                <td><strong>ZBrush</strong></td>
+                <td>高精度スカルプティング</td>
+                <td>キャラクターモデラーにとっての必須ソフト。リアル系・フィギュア造形だけでなく、アニメ系キャラのベース作りにも多用されます。</td>
+            </tr>
+            <tr>
+                <td><strong>Blender</strong></td>
+                <td>総合3Dソフト（無料）</td>
+                <td>オープンソースながらプロ顔負けの機能を持ち、近年はインディーゲームや中小スタジオでの採用が急増。初期のスキル習得・作品制作に最適です。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. 採用を勝ち取るポートフォリオ（作品集）の作り方</h2>
+    <p>3DCGデザイナーの就職活動では、学歴よりも<b>ポートフォリオ（作品集）</b>が100%重視されます。有利に進めるための掲載ポイントは以下の通りです。</p>
+    
+    <ul>
+        <li><strong>ワイヤーフレームの掲載：</strong> 完成品だけでなく、ポリゴンの流れ（トポロジー）が分かる画像を必ず載せる。</li>
+        <li><strong>制作プロセスの開示：</strong> 2Dの原画（許諾のあるもの、または自作）と、それをどう3Dに落とし込んだかの比較を載せる。</li>
+        <li><strong>テクスチャマップの展開図：</strong> 質感（カラー、ノーマル、ラフネス等）をどう設定したか、データの綺麗さを示す。</li>
+        <li><strong>異なるテイストの提示：</strong> アニメ調（セルルック）とリアル調、人間とモンスターなど、2〜3のバリエーションがあると対応力の高さを証明できます。</li>
+    </ul>
+
+    <h2>4. 今日から始めるアクションプラン</h2>
+    <ol>
+        <li><strong>Blenderをインストールする：</strong> 完全無料で今すぐ始められます。まずはYouTube等の基本操作チュートリアル動画を1本完走しましょう。</li>
+        <li><strong>フィギュアや日常のオブジェクトを観察する：</strong> 好きなキャラクターのフィギュアを様々な角度、特に「真上」や「真下」から見て、立体としてどう成立しているかを研究します。</li>
+        <li><strong>まずは「頭部だけ」作ってみる：</strong> 最初から全身を作ろうとすると挫折しやすいため、まずは顔・髪の毛の作成に集中し、徐々にステップアップするのがおすすめです。</li>
+    </ol>
+
+    <div class="footer">
+        <p>© 2026 3DCG Career Guide Platform. All Rights Reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>
