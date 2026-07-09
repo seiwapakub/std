@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女性向けライフスタイルマガジン</title>
+    <style>
+        /* 全体のリセットと基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #faf7f5;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        /* ヘッダー部分 */
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 30px 10px;
+            border-bottom: 1px solid #f0e6e1;
+        }
+        header h1 {
+            font-size: 24px;
+            color: #d4a373;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #6c757d;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* メインビジュアル */
+        .main-visual {
+            background-color: #f7ede2;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .main-visual h2 {
+            font-size: 20px;
+            color: #5c5552;
+            font-weight: normal;
+        }
+
+        /* コンテンツエリア */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 記事カードの並び */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* 【変更箇所】画像を枠内に綺麗に収めるための設定 */
+        .card-img-wrapper {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 縦横比を崩さずにぴったり表示 */
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+        .card-tag {
+            display: inline-block;
+            font-size: 11px;
+            background-color: #f5ebe0;
+            color: #a3704c;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+        .card-text {
+            font-size: 13px;
+            color: #777777;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #999999;
+            border-top: 1px solid #f0e6e1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Le Journal</h1>
+        <nav>
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">ビューティー</a></li>
+                <li><a href="#">ファッション</a></li>
+                <li><a href="#">ライフスタイル</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-visual">
+        <div>
+            <h2>毎日の暮らしを、もう少し心地よく。</h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid">
+            
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&auto=format&fit=crop&q=60" alt="スキンケア" class="card-img">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">Beauty</span>
+                    <h3 class="card-title">朝の5分で変わる、透明感を出すスキンケアのコツ</h3>
+                    <p class="card-text">忙しい朝でも簡単にできる、肌のトーンをワントーン明るく見せるための基本ステップをご紹介します。</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=500&auto=format&fit=crop&q=60" alt="観葉植物" class="card-img">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">Lifestyle</span>
+                    <h3 class="card-title">お部屋に飾りたい、季節を感じるお花とグリーンの選び方</h3>
+                    <p class="card-text">初心者でもお世話がしやすく、インテリアに馴染みやすいおすすめの観葉植物をピックアップしました。</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=500&auto=format&fit=crop&q=60" alt="コーディネート" class="card-img">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">Fashion</span>
+                    <h3 class="card-title">定番アイテムで作る、大人上品なワントーンコーデ</h3>
+                    <p class="card-text">着回し力の高いベージュやホワイトを使った、オフィスでも浮かない洗練されたコーディネート術。</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Le Journal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

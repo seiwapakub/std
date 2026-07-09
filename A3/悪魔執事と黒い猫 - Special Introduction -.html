@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悪魔執事と黒い猫 - Special Introduction -</title>
+    <style>
+        :root {
+            --bg-dark: #070b12;
+            --bg-panel: rgba(13, 20, 33, 0.85);
+            --accent-gold: #cfab43;
+            --accent-silver: #a1b2c4;
+            --text-main: #e2e8f0;
+            --text-sub: #8fa0b5;
+            --border-gold: 1px solid #bfa043;
+            --font-serif: 'Georgia', 'Times New Roman', 'Shippori Mincho', 'Yu Mincho', serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(207, 171, 67, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 50% 30%, #111b2b 0%, #070b12 80%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        header {
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        /* 月のモチーフ */
+        header::before {
+            content: "☾";
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            text-shadow: 0 0 15px rgba(207, 171, 67, 0.6);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            margin: 0;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(207, 171, 67, 0.3);
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            letter-spacing: 2px;
+            margin: 8px 0 0 0;
+            text-transform: uppercase;
+        }
+
+        /* クラシカルな飾り線 */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to var(--direction, right), transparent, var(--accent-gold));
+        }
+        .divider::after {
+            --direction: left;
+        }
+        .divider-icon {
+            color: var(--accent-gold);
+            padding: 0 10px;
+            font-size: 0.8rem;
+        }
+
+        .panel {
+            background: var(--bg-panel);
+            border: var(--border-gold);
+            border-radius: 4px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+            position: relative;
+        }
+
+        /* 内側の飾り枠 */
+        .panel::before {
+            content: "";
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid rgba(207, 171, 67, 0.15);
+            pointer-events: none;
+        }
+
+        .panel-title {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .intro-text {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+
+        .intro-text p {
+            margin: 0 0 20px 0;
+        }
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            border-top: 1px dashed rgba(207, 171, 67, 0.3);
+            border-bottom: 1px dashed rgba(207, 171, 67, 0.3);
+            padding: 15px 10px;
+            margin: 25px 0;
+            text-align: center;
+            font-style: italic;
+            color: var(--accent-silver);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>悪魔執事と黒い猫</h1>
+        <div class="subtitle">Game Introduction</div>
+    </header>
+
+    <div class="divider">
+        <span class="divider-icon">❖</span>
+    </div>
+
+    <div class="panel">
+        <div class="panel-title">主様を現実と異世界で支える物語</div>
+        
+        <div class="intro-text">
+            <p>
+                『悪魔執事と黒い猫』は、スタジオわさびが届ける新感覚の育成＆生活サポートノベルゲームです。
+                重厚なゴシック・ダークファンタジーの世界観の中で、主（あるじ）であるあなたと、あなたに絶対の忠誠を誓う執事たちとの絆が描かれます。
+            </p>
+
+            <div class="highlight-box">
+                「運命の指輪が輝く夜、黒い猫にいざなわれ、美しき執事の待つ邸宅へ――」
+            </div>
+
+            <p>
+                本作の最大の特徴は、ノベルゲームでありながら、あなたの現実の日常を豊かにする「コンシェルジュ」として機能する点にあります。
+                心に寄り添うメンタルケアから日々のタスク管理まで、クラシカルで洗練された空間が、主様の毎日を静かに、そして優雅にサポートします。
+            </p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-title">作品を構成する2つの柱</div>
+        
+        <div class="intro-text">
+            <div style="font-weight: bold; color: var(--accent-gold); margin-bottom: 5px;">◆ 天使と戦う過酷なダークファンタジー</div>
+            <p style="color: var(--text-sub); font-size: 0.9rem; padding-left: 5px;">
+                メインストーリーでは、世界を滅ぼそうとする脅威「天使」に立ち向かう執事たちの命がけの戦いが綴られます。彼らがなぜ悪魔と契約したのか、その代償と過酷な過去を紐解く、シリアスで深みのあるドラマが紡がれます。
+            </p>
+
+            <div style="font-weight: bold; color: var(--accent-gold); margin-top: 20px; margin-bottom: 5px;">◆ 日常を豊かにするライフサポートシステム</div>
+            <p style="color: var(--text-sub); font-size: 0.9rem; padding-left: 5px;">
+                カレンダーや天気予報といった実用的な便利ツールから、瞑想のナビゲーション、作業用タイマーまでを統合。現代社会のストレスに晒される主様の自己肯定感を高め、健やかな生活リズムを全力でバックアップします。
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; Devil Butler and Black Cat
+</footer>
+
+</body>
+</html>

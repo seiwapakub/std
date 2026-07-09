@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大人向け・推し活のメリット</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fcfbfa; /* 洗練されたウォームホワイト */
+            --main-color: #2c3e50; /* 深みのあるネイビーグレー */
+            --accent-color: #c5a880; /* 上品なシャンパンゴールド */
+            --text-color: #333333; /* 落ち着いたチャコール */
+            --text-muted: #666666;
+            --card-bg: #ffffff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 60px 20px;
+            letter-spacing: 0.06em;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: var(--main-color);
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
+
+        .intro {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-top: 3px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(197, 168, 128, 0.15);
+        }
+
+        .num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: var(--main-color);
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+            text-align: justify;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 11px;
+            color: #b0a8a4;
+            letter-spacing: 0.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <p class="category">Lifestyle & Culture</p>
+        <h1>推し活が大人にもたらす、<br>4つの精神的・社会的メリット</h1>
+        <p class="intro">日々のタスクに追われがちな大人世代にこそ、情熱を注げる「推し」の存在がウェルビーイング（心身の幸福）を高める鍵になります。</p>
+    </header>
+    
+    <div class="grid">
+        <div class="card">
+            <span class="num">01 / Emotional Refresh</span>
+            <h2>日常のストレスからの解放と活力</h2>
+            <p>仕事や家庭などの「日常の役割」から離れ、純粋に好きなものに没頭する時間は、最高のリフレッシュになります。推しを応援することで脳内にドーパミンが分泌され、明日への活力を得られます。</p>
+        </div>
+
+        <div class="card">
+            <span class="num">02 / Open Community</span>
+            <h2>利害関係のないサードプレイス</h2>
+            <p>職場や家族とは異なる、共通の価値観を持った新しいコミュニティが生まれます。年齢や肩書きを気にせず、フラットに熱量を共有し合える仲間との出会いは、大人の人生を豊かにします。</p>
+        </div>
+
+        <div class="card">
+            <span class="num">03 / Continuous Learning</span>
+            <h2>知的好奇心の刺激とスキルの獲得</h2>
+            <p>推しの背景にある歴史や言語を学び直したり、SNSでの発信・デザイン、遠征の企画などを通して、自然と新しい知識やITスキルが身につきます。大人のインプット・アウトプットとして最適です。</p>
+        </div>
+
+        <div class="card">
+            <span class="num">04 / Self-Investment</span>
+            <h2>自己投資とセルフケアのモチベーション</h2>
+            <p>「ライブに向けて美容や健康に気を配る」「推し活の費用をモチベーションに仕事を頑張る」など、ライフスタイルにポジティブな規律が生まれ、心身ともに自分を磨き続ける原動力になります。</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; ESSENCE - CULTURE MAGAZINE FOR ADULTS</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘のデジタル宝石図鑑 〜地球の記憶〜</title>
+    <style>
+        /* --- 基本スタイル（神秘的なダークテーマ） --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Times New Roman', 'Georgia', 'YuMincho', 'Hiragino Mincho ProN', serif;
+            background: radial-gradient(circle at 50% 0%, #0d1b2a 0%, #080f1a 100%);
+            color: #e0e1dd;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+        
+        /* 装飾的な背景の光（エフェクト） */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 600px;
+            background: radial-gradient(circle, rgba(65, 90, 119, 0.15) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 50px 20px;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            background: linear-gradient(135deg, #fff 30%, #e0a96d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(224, 169, 109, 0.2);
+        }
+        header p {
+            font-size: 1rem;
+            color: #a3b18a;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* --- ギャラリーレイアウト --- */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        /* --- 宝石カード（グラスモフィズム風） --- */
+        .gem-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+        .gem-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(224, 169, 109, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(224, 169, 109, 0.1);
+        }
+        
+        /* 宝石輝きエフェクト付き画像エリア */
+        .gem-image-area {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gem-image-area::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 55%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+        .gem-card:hover .gem-image-area::after {
+            transform: translate(50%, 50%) rotate(45deg);
+        }
+
+        .gem-info {
+            padding: 25px;
+            text-align: center;
+        }
+        .gem-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 400;
+            color: #fff;
+            border-bottom: 1px solid rgba(224, 169, 109, 0.2);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .gem-info p {
+            font-size: 0.85rem;
+            color: #aaa;
+            font-family: sans-serif;
+        }
+
+        /* --- モーダル（ポップアップ） --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(4, 8, 15, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background: #0b132b;
+            border: 1px solid rgba(224, 169, 109, 0.2);
+            width: 100%;
+            max-width: 750px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 40px rgba(224, 169, 109, 0.05);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2.2rem;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.3s;
+        }
+        .close-btn:hover {
+            color: #e0a96d;
+        }
+        .modal-body {
+            overflow-y: auto;
+            padding: 40px;
+        }
+        .modal-header-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            position: relative;
+        }
+        /* モーダル画像エリアのグラデーションオーバーレイ */
+        .modal-header-img::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0b132b 100%);
+        }
+        .modal-header-img span {
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+        
+        .modal-title-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .modal-title-area h2 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 400;
+        }
+        .modal-subtitle {
+            color: #e0a96d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .modal-catch {
+            font-size: 0.95rem;
+            color: #a3b18a;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* 綺麗に整えたデータテーブル */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .spec-table th, .spec-table td {
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+        .spec-table th {
+            color: #e0a96d;
+            width: 30%;
+            font-weight: normal;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .spec-table td {
+            color: #ccc;
+            font-family: sans-serif;
+        }
+
+        .modal-description h4 {
+            color: #e0a96d;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: normal;
+            border-left: 3px solid #e0a96d;
+            padding-left: 10px;
+        }
+        .modal-description p {
+            font-size: 0.95rem;
+            color: #bcbed8;
+            text-align: justify;
+            font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+            letter-spacing: 0.03em;
+            line-height: 1.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.8rem;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mystic Gemstones</h1>
+        <p>〜 地球の記憶を宿す、神秘の結晶たち 〜</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery-grid" id="galleryGrid">
+            </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <div id="modalHeaderImg" class="modal-header-img"><span id="modalHeaderTitle"></span></div>
+            <div class="modal-body">
+                <div class="modal-title-area">
+                    <h2 id="modalGemName">宝石名</h2>
+                    <div id="modalGemSubtitle" class="modal-subtitle">英語名</div>
+                    <div id="modalCatch" class="modal-catch">一言</div>
+                </div>
+                
+                <table class="spec-table">
+                    <tr>
+                        <th>鉱物名</th>
+                        <td id="modalMineral">---</td>
+                    </tr>
+                    <tr>
+                        <th>モース硬度</th>
+                        <td id="modalHardness">---</td>
+                    </tr>
+                    <tr>
+                        <th>結晶系</th>
+                        <td id="modalCrystal">---</td>
+                    </tr>
+                    <tr>
+                        <th>主な産地</th>
+                        <td id="modalOrigin">---</td>
+                    </tr>
+                </table>
+
+                <div class="modal-description">
+                    <h4>🔬 神秘の特性と詳細</h4>
+                    <p id="modalDesc">解説文がここに表示されます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 MYSTIC GEMSTONE GALLERY.
+    </footer>
+
+    <script>
+        // 各宝石に神秘的な深みのあるグラデーションカラーを設定
+        const gemData = [
+            {
+                name: "ダイヤモンド",
+                eng: "Diamond",
+                mineral: "ダイヤモンド（金剛石）",
+                hardness: "10（最高値）",
+                crystal: "等軸晶系",
+                origin: "ロシア、ボツワナ、コンゴ民主共和国など",
+                grad: "linear-gradient(135deg, #2c3e50, #bdc3c7)", 
+                catchphrase: "永遠の絆を象徴する、地球上でもっとも硬い不屈の結晶",
+                desc: "炭素単一の元素からなる、地球上で最も硬い天然の物質です。光の屈折率が非常に高く、取り込んだ光を内部で反射して強烈にきらめく「ブリリアンス」と、虹色の光を放つ「ディスパージョン」という輝きが特徴です。一般的には無色透明が有名ですが、窒素やホウ素などの混入により、イエロー、ピンク、ブルーといった希少な「ファンシーカラー」も存在します。"
+            },
+            {
+                name: "ルビー",
+                eng: "Ruby",
+                mineral: "コランダム（鋼玉）",
+                hardness: "9",
+                crystal: "三方晶系",
+                origin: "ミャンマー、モザンビーク、マダガスカルなど",
+                grad: "linear-gradient(135deg, #4a000e, #d62828)",
+                catchphrase: "情熱の赤を宿す、宝石の女王",
+                desc: "酸化アルミニウムの結晶である「コランダム」という鉱物のうち、クロムという元素が含まれることで赤色に発色したものを指します。最高級とされるのは、ミャンマー産に見られる「ピジョンブラッド（鳩の血）」と呼ばれる、深くわずかに紫がかった鮮やかな赤色です。紫外線に当たると自ら発光する「蛍光性」を持つものが多く、暗がりでも妖艶に輝きます。"
+            },
+            {
+                name: "サファイア",
+                eng: "Sapphire",
+                mineral: "コランダム（鋼玉）",
+                hardness: "9",
+                crystal: "三方晶系",
+                origin: "スリランカ、マダガスカル、インドなど",
+                grad: "linear-gradient(135deg, #03001e, #7303c0, #ec38bc)",
+                catchphrase: "天空と宇宙を映し出す、深い知性の青",
+                desc: "ルビーと同じ「コランダム」の仲間で、鉄とチタンが含まれることで美しい青色になります。サファイアは青色が有名ですが、実は「ファンシーサファイア」と呼ばれる、ピンク、イエロー、グリーン、オレンジなど、ほぼ全てのカラーバリエーションが存在します。中でも、オレンジとピンクが混ざり合った「パパラチアサファイア」は非常に高い希少価値を持ちます。"
+            },
+            {
+                name: "エメラルド",
+                eng: "Emerald",
+                mineral: "ベリル（緑柱石）",
+                hardness: "7.5 〜 8",
+                crystal: "六方晶系",
+                origin: "コロンビア、ザンビア、ブラジルなど",
+                grad: "linear-gradient(135deg, #0b251e, #137547)",
+                catchphrase: "絶世の美女たちを魅了した、新緑の輝き",
+                desc: "ベリルという鉱物に、クロムやバナジウムが含まれることで鮮やかな緑色に変化した宝石です。結晶が成長する過程で、内部に多くの傷や液体（インクルージョン＝内包物）が入りやすいという非常に繊細な性質を持っています。そのため、内包物は天然の証（庭園＝ジャルダン）として美しさの一部として受け入れられています。"
+            },
+            {
+                name: "アレキサンドライト",
+                eng: "Alexandrite",
+                mineral: "クリソベリル（金緑石）",
+                hardness: "8.5",
+                crystal: "斜方晶系",
+                origin: "ブラジル、スリランカ、ロシアなど",
+                grad: "linear-gradient(135deg, #130cb7, #52e5e7)",
+                catchphrase: "昼はエメラルド、夜はルビーに変わる、神のいたずら",
+                desc: "最大の魅力は、当てる光の種類によって劇的に色が変わる「変色効果（カラーチェンジ）」です。太陽光や蛍光灯の下では深い緑色に見えますが、白熱灯やキャンドルの光を当てると、艶やかなワインレッド（赤紫色）へと変化します。この驚異的な性質から「19世紀に発見されたもっとも奇妙な宝石」とも称されます。"
+            },
+            {
+                name: "アクアマリン",
+                eng: "Aquamarine",
+                mineral: "ベリル（緑柱石）",
+                hardness: "7.5 〜 8",
+                crystal: "六方晶系",
+                origin: "ブラジル、パキスタン、モザンビークなど",
+                grad: "linear-gradient(135deg, #4facfe, #00f2fe)",
+                catchphrase: "穏やかな海をそのまま閉じ込めた、癒しの結晶",
+                desc: "エメラルドと同じ「ベリル」の仲間ですが、こちらは微量の鉄が含まれることで、透き通った海のような美しい水色になります。エメラルドとは対照的に、結晶が大きく、内部の傷が少ないスッキリとした状態で採掘されることが多いのが特徴です。夜の薄暗い照明の下でも美しく輝くことから「夜の女王」と呼ばれ重宝されました。"
+            }
+        ];
+
+        // --- ギャラリーカード生成 ---
+        const galleryGrid = document.getElementById('galleryGrid');
+        
+        gemData.forEach((gem, index) => {
+            const card = document.createElement('div');
+            card.className = 'gem-card';
+            card.innerHTML = `
+                <div class="gem-image-area" style="background: ${gem.grad}">
+                    <span>${gem.name}</span>
+                </div>
+                <div class="gem-info">
+                    <h3>${gem.name}</h3>
+                    <p>${gem.catchphrase}</p>
+                </div>
+            `;
+            card.addEventListener('click', () => openModal(index));
+            galleryGrid.appendChild(card);
+        });
+
+        // --- モーダル制御 ---
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeBtn = document.getElementById('closeBtn');
+
+        function openModal(index) {
+            const gem = gemData[index];
+            
+            document.getElementById('modalHeaderImg').style.background = gem.grad;
+            document.getElementById('modalHeaderTitle').innerText = gem.eng;
+            document.getElementById('modalGemName').innerText = gem.name;
+            document.getElementById('modalGemSubtitle').innerText = gem.eng;
+            document.getElementById('modalCatch').innerText = gem.catchphrase;
+            document.getElementById('modalMineral').innerText = gem.mineral;
+            document.getElementById('modalHardness').innerText = gem.hardness;
+            document.getElementById('modalCrystal').innerText = gem.crystal;
+            document.getElementById('modalOrigin').innerText = gem.origin;
+            document.getElementById('modalDesc').innerText = gem.desc;
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+    </script>
+</body>
+</html>
