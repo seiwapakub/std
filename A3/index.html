@@ -1,75 +1,70 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>普通科アドバンス３年 作品目次</title>
+    <title>生徒作品リンク集</title>
     <style>
         /* 全体のベースデザイン */
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #f8f9fa;
-            color: #2b2b2b;
+            background-color: #f3f4f6;
+            color: #1f2937;
             margin: 0;
             padding: 50px 20px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         /* ヘッダー */
         h1 {
             text-align: center;
-            color: #1a1a1a;
+            color: #111827;
             font-size: 2.4rem;
             margin-bottom: 8px;
-            letter-spacing: 0.03em;
-            position: relative;
+            letter-spacing: 0.05em;
         }
 
         .subtitle {
             text-align: center;
-            color: #6c757d;
+            color: #6b7280;
             font-size: 1rem;
-            margin-bottom: 50px;
-            letter-spacing: 0.1em;
+            margin-bottom: 45px;
         }
 
-        /* 3列/2列の綺麗なグリッドレイアウト */
+        /* グリッドレイアウト */
         ul {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 24px;
             padding: 0;
             list-style-type: none;
         }
 
-        /* マガジン風カードのスタイル */
+        /* メディア風カードのスタイル */
         li {
             background: #ffffff;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 14px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
         li:hover {
-            transform: translateY(-4px);
-            border-color: #dee2e6;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        /* リンクエリアをカード全体に */
+        /* リンクエリアをカード全体に広げる */
         a {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            display: block;
             padding: 28px;
-            color: #2b2b2b;
+            color: #111827;
             text-decoration: none;
             height: 100%;
             box-sizing: border-box;
@@ -78,63 +73,66 @@
 
         /* タイトルの文字デザイン */
         .page-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             line-height: 1.6;
-            margin-top: 32px; /* タグ用のスペース */
-            color: #1a1a1a;
-            word-break: break-all;
+            margin-top: 35px; /* タグ用のスペース */
+            color: #1f2937;
         }
 
         /* 拡張子（.html）の控えめなデザイン */
         .extension {
             font-size: 0.8rem;
-            color: #adb5bd;
+            color: #9ca3af;
             font-weight: normal;
             display: block;
-            margin-top: 12px;
+            margin-top: 10px;
             font-family: monospace;
         }
 
-        /* マガジン風のスマートなカテゴリタグ */
+        /* グラデーションタグ */
         .tag {
             position: absolute;
             top: 24px;
             left: 28px;
             font-size: 0.7rem;
             font-weight: 700;
-            padding: 2px 8px;
-            border-left: 3px solid #333;
-            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: #ffffff;
+            letter-spacing: 0.03em;
         }
 
-        /* ――― テーマに合わせた知的なカラー・ライン ――― */
-        .law       { border-left-color: #004085; color: #004085; } /* 不動産・宅建 */
-        .fashion   { border-left-color: #e83e8c; color: #e83e8c; } /* カラー＆アクセ */
-        .game      { border-left-color: #6f42c1; color: #6f42c1; } /* ゲーム */
-        .biology    { border-left-color: #28a745; color: #28a745; } /* ネコ科・ヒョウ柄 */
-        .hobby     { border-left-color: #fd7e14; color: #fd7e14; } /* ロードバイク */
-        .music     { border-left-color: #17a2b8; color: #17a2b8; } /* 音楽理論 */
+        /* ――― テーマに合わせたカラーグラデーション ――― */
+        .creative   { background: linear-gradient(135deg, #ec4899, #8b5cf6); } /* 3DCG・宝石・あくねこ */
+        .trend      { background: linear-gradient(135deg, #3b82f6, #06b6d4); } /* トイプードル・推し活・カルチャー */
+        .lifestyle  { background: linear-gradient(135deg, #10b981, #059669); } /* ファッション・マガジン・趣味 */
+        .academic   { background: linear-gradient(135deg, #f59e0b, #d97706); } /* 宅建・都市歴史・生物・音楽理論 */
+        .system     { background: linear-gradient(135deg, #6b7280, #4b5563); } /* バックアップ・古いファイル */
 
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>普通科アドバンス３年</h1>
-    <p class="subtitle">GRADUATION RESEARCH & PROJECTS</p>
+    <h1>生徒のデジタル作品集</h1>
+    <p class="subtitle">CREATIVE DIGITAL PORTFOLIO</p>
 
     <ul>
-        <li><a href="5分でわかる！不動産のクーリング・オフ（宅建業法）.html"><span class="tag law">法律・資格</span><div class="page-title">5分でわかる！不動産のクーリング・オフ（宅建業法）<span class="extension">.html</span></div></a></li>
-        <li><a href="SUMMER_COLOR_&_ACCESSORIES.html"><span class="tag fashion">ファッション</span><div class="page-title">SUMMER_COLOR_&_ACCESSORIES<span class="extension">.html</span></div></a></li>
-        <li><a href="ゲームソフト売上ランキングまとめ.html"><span class="tag game">カルチャー</span><div class="page-title">ゲームソフト売上ランキングまとめ<span class="extension">.html</span></div></a></li>
-        <li><a href="ネコ科の進化史.html"><span class="tag biology">生物・歴史</span><div class="page-title">ネコ科の進化史<span class="extension">.html</span></div></a></li>
-        <li><a href="ヒョウがらのひみつ.html"><span class="tag biology">自然科学</span><div class="page-title">ヒョウがらのひみつ<span class="extension">.html</span></div></a></li>
-        <li><a href="ロードバイク4大メーカー徹底比較.html"><span class="tag hobby">スポーツ・趣味</span><div class="page-title">ロードバイク4大メーカー徹底比較<span class="extension">.html</span></div></a></li>
-        <li><a href="実践・音楽理論の基礎.html"><span class="tag music">芸術・音楽</span><div class="page-title">実践・音楽理論の基礎<span class="extension">.html</span></div></a></li>
-        <li><a href="知るほど面白い、不動産と都市の歴史.html"><span class="tag law">社会・歴史</span><div class="page-title">知るほど面白い、不動産と都市の歴史<span class="extension">.html</span></div></a></li>
-        <li><a href="心に残り続ける小説たち/"><span class="tag law">芸術・文芸</span><div class="page-title">心に残り続ける小説たち<span class="extension"></span></div></a></li>
-
+        <li><a href="3DCGキャラクターモデラーへの道  職業ガイド.html"><span class="tag creative">クリエイティブ</span><div class="page-title">3DCGキャラクターモデラーへの道  職業ガイド<span class="extension">.html</span></div></a></li>
+        <li><a href="5分でわかる！不動産のクーリング・オフ（宅建業法）.html"><span class="tag academic">社会・法律</span><div class="page-title">5分でわかる！不動産のクーリング・オフ（宅建業法）<span class="extension">.html</span></div></a></li>
+        <li><a href="SUMMER_COLOR_&_ACCESSORIES.html"><span class="tag lifestyle">ファッション</span><div class="page-title">SUMMER_COLOR_&_ACCESSORIES<span class="extension">.html</span></div></a></li>
+        <li><a href="ゲームソフト売上ランキングまとめ.html"><span class="tag trend">カルチャー</span><div class="page-title">ゲームソフト売上ランキングまとめ<span class="extension">.html</span></div></a></li>
+        <li><a href="セルフカットされたトイプードルが分身する？ネットで話題の現象を解説.html"><span class="tag trend">トレンド・話題</span><div class="page-title">セルフカットされたトイプードルが分身する？ネットで話題の現象を解説<span class="extension">.html</span></div></a></li>
+        <li><a href="ネコ科の進化史.html"><span class="tag academic">自然科学</span><div class="page-title">ネコ科の進化史<span class="extension">.html</span></div></a></li>
+        <li><a href="ヒョウがらのひみつ.html"><span class="tag academic">自然科学</span><div class="page-title">ヒョウがらのひみつ<span class="extension">.html</span></div></a></li>
+        <li><a href="ロードバイク4大メーカー徹底比較.html"><span class="tag lifestyle">スポーツ・趣味</span><div class="page-title">ロードバイク4大メーカー徹底比較<span class="extension">.html</span></div></a></li>
+        <li><a href="大人向け・推し活のメリット.html"><span class="tag trend">ライフスタイル</span><div class="page-title">大人向け・推し活のメリット<span class="extension">.html</span></div></a></li>
+        <li><a href="女性向けライフスタイルマガジン.html"><span class="tag lifestyle">マガジン</span><div class="page-title">女性向けライフスタイルマガジン<span class="extension">.html</span></div></a></li>
+        <li><a href="実践・音楽理論の基礎.html"><span class="tag academic">芸術・音楽</span><div class="page-title">実践・音楽理論の基礎<span class="extension">.html</span></div></a></li>
+        <li><a href="悪魔執事と黒い猫 - Special Introduction -.html"><span class="tag creative">エンタメ・ゲーム</span><div class="page-title">悪魔執事と黒い猫 - Special Introduction -<span class="extension">.html</span></div></a></li>
+        <li><a href="知るほど面白い、不動産と都市の歴史.html"><span class="tag academic">社会・歴史</span><div class="page-title">知るほど面白い、不動産と都市の歴史<span class="extension">.html</span></div></a></li>
+        <li><a href="神秘のデジタル宝石図鑑 〜地球の記憶〜.html"><span class="tag creative">アート・科学</span><div class="page-title">神秘のデジタル宝石図鑑 〜地球の記憶〜<span class="extension">.html</span></div></a></li>
     </ul>
 </div>
 
