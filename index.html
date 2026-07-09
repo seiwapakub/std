@@ -5,62 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生徒の作品リンク集(清和学園高校 情報Ⅰ）</title>
     <style>
+        /* 全体のベースデザイン */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        h1 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .container {
+
+        .wrapper {
             width: 100%;
-            max-width: 400px;
+            max-width: 850px;
+        }
+
+        /* ヘッダーエリア */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .school-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #3498db;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #1e272e;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+
+        /* 2つの学年を綺麗に並べるコンテナ */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* 学年カードのスタイル */
+        .grade-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            padding: 35px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-        }
-        .btn {
-            display: block;
-            background-color: #ffffff;
-            color: #34495e;
+            justify-content: space-between;
+            transition: all 0.3s ease;
             text-decoration: none;
-            font-size: 1.2rem;
+            color: inherit;
+            box-sizing: border-box;
+        }
+
+        .grade-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+
+        /* カード内のテキストデザイン */
+        .grade-title {
+            font-size: 1.4rem;
             font-weight: bold;
-            padding: 20px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 学年ごとのアクセント丸 */
+        .grade-title::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .card-a1 .grade-title::before { background-color: #2ecc71; } /* 1年はフレッシュな緑 */
+        .card-a3 .grade-title::before { background-color: #9b59b6; } /* 3年はスマートな紫 */
+
+        .grade-desc {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* 各学年のキーワードタグの集まり */
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .keyword-tag {
+            font-size: 0.75rem;
+            background-color: #f1f2f6;
+            color: #57606f;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* アクションボタン風のリンク表示 */
+        .action-btn {
+            display: block;
+            background-color: #f8fafc;
+            color: #3498db;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 14px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
             border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
         }
-        .btn:hover {
+
+        .grade-card:hover .action-btn {
             background-color: #3498db;
             color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.2);
             border-color: #3498db;
+        }
+
+        /* スマホ向けの微調整 */
+        @media (max-width: 480px) {
+            body { padding: 40px 15px; }
+            h1 { font-size: 1.8rem; }
+            .container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <h1>生徒の作品ページ</h1>
-	<h2>清和学園高校 情報Ⅰ</h2>
+<div class="wrapper">
+    <header>
+        <span class="school-name">清和学園高校 情報Ⅰ</span>
+        <h1>生徒の作品ページ</h1>
+        <p class="subtitle">各クラス・学年の成果物の一覧ポータル</p>
+    </header>
 
     <div class="container">
-        <!-- フォルダへの相対リンク -->
-        <a href="A1/" class="btn">普通科アドバンス１年の作品</a>
-        <a href="A3/" class="btn">普通科アドバンス３年の作品</a>
+        <!-- 1年生へのリンクカード -->
+        <a href="A1/" class="grade-card card-a1">
+            <div>
+                <div class="grade-title">普通科アドバンス１年</div>
+                <p class="grade-desc">スポーツの分析、地域のおすすめスポット紹介、音楽や趣味の深掘りなど、個性に溢れたバラエティ豊かな研究・紹介ページが集まっています。</p>
+                <div class="keywords">
+                    <span class="keyword-tag">W杯サッカー</span>
+                    <span class="keyword-tag">Mrs. GREEN APPLE</span>
+                    <span class="keyword-tag">東松山観光</span>
+                    <span class="keyword-tag">昆虫標本</span>
+                </div>
+            </div>
+            <div class="action-btn">作品の一覧を見る &rarr;</div>
+        </a>
+
+        <!-- 3年生へのリンクカード -->
+        <a href="A3/" class="grade-card card-a3">
+            <div>
+                <div class="grade-title">普通科アドバンス３年</div>
+                <p class="grade-desc">宅建業法（クーリング・オフ）や不動産の歴史といった専門的な社会研究から、音楽理論、ロードバイク比較など、最高学年らしい深い洞察が光るページです。</p>
+                <div class="keywords">
+                    <span class="keyword-tag">宅建業法・法律</span>
+                    <span class="keyword-tag">音楽理論の基礎</span>
+                    <span class="keyword-tag">ネコ科の進化史</span>
+                    <span class="keyword-tag">ロードバイク比較</span>
+                </div>
+            </div>
+            <div class="action-btn">作品の一覧を見る &rarr;</div>
+        </a>
     </div>
+</div>
 
 </body>
 </html>
